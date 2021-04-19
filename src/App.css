@@ -1,0 +1,38 @@
+body{
+  background-image: url(/src/assets/img/man-2264825_1920.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
+}
+img{
+  width: 40%;
+  padding-top: 10px;
+}
+.conteiner{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.padre{
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row-reverse;
+}
+.boton{
+  padding-top: 20px;
+}
+.boton a{
+  margin: 10px;
+}
+
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
