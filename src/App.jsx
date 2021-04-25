@@ -3,6 +3,7 @@ import Registro from './components/Registro'
 import Login from './components/Login'
 import Inicio from './components/Inicio'
 import Menu from './components/Menu'
+
 import './assets/css/App.css';
 
 

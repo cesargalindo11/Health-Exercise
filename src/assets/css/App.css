@@ -50,12 +50,12 @@ h2{
   width: 11rem;
   height: 3rem;
   border: none;
-  margin-top: 1rem;
+  margin:0 auto;
 }
 
 
 .contenedor{
-  width: 900px;
+  width: 600px;
   max-width: 120rem;
   margin: 0 auto 0 auto;
   background: rgba(0, 0, 0, 0.3);
@@ -67,17 +67,20 @@ h2{
   flex-direction: column;
   gap: 10px;
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.3);
   
 }
 
 .contenido-form input{
-   height: 3rem;
+   height: 2.5rem;
+   width: 20rem;
+   margin: 0 auto;
    border-radius: 10px;
    font-size: 1.5rem;
 }
 .titulo{
   color:#2085b4;
+  margin: 0 auto;
 }
 
 /*Navegation bar*/
