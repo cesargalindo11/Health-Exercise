@@ -1,11 +1,12 @@
 import React from 'react';
+import '../assets/css/App.css'
 
 const Registro = () => {
   return(
     <div className='row mt-5'>
 
       <div className='col'></div>
-      <div className='col'>
+      <div className='col bg-registro'>
 
         <form className='form-group'> 
           <div className="input-group mb-3">
@@ -45,17 +46,17 @@ const Registro = () => {
           </div>
 
           <div className="form-check form-check-inline mb-3">
-            <div className='input-group-prepend'>
-              <span className="input-group-text ">Sexo</span>
+            <div className='input-group-prepend '>
+              <span className="input-group-text mg-r">Sexo</span>
             </div>
             <input 
             className='form-check-input'
             type="radio"/>
-            <label className="form-check-label form-check form-check-inline" for="inlineRadio1">Mujer</label>
+            <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio1">Mujer</label>
             <input 
             className='form-check-input'
             type="radio"/>
-            <label className="form-check-label form-check form-check-inline" for="inlineRadio2">Hombre</label>
+            <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio2">Hombre</label>
 
           </div>
 

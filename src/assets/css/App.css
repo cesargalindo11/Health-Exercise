@@ -12,3 +12,12 @@ body{
     padding-top:15px;
     border-radius: 10px;
 }
+.bg-registro{
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top:15px;
+    border-radius: 10px; 
+}
+.mg-r{
+    margin-right: 60px;
+}
