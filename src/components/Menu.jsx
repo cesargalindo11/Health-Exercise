@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom'
 const Menu = () => {
   return(
     <div>
-      <nav className= 'navbar navbar-expand-lg navbar-light bg-light'>
-        <ul className='navbar-nav mr-auto'>
+      <nav className= "">
+        <ul className="navegacion">
           <li className='nav-item'>
             <Link className='nav-link' to='/'>Inicio</Link>
           </li>
