@@ -3,9 +3,7 @@ import Registro from './components/Registro'
 import Login from './components/Login'
 import Inicio from './components/Inicio'
 import Menu from './components/Menu'
-
-import './assets/css/App.css';
-
+import './assets/css/App.css'
 
 import {
   BrowserRouter as Router,
@@ -13,11 +11,10 @@ import {
   Route
 } from 'react-router-dom';
 
-
 function App() {
   return (
     
-      <div className="contenedor">
+      <div>
 
         <Router>
           <Menu></Menu>

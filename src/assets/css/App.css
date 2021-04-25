@@ -1,90 +1,14 @@
-.App {
-  text-align: center;
+body{
+    background-image: url(../img/man-2264825_1920.jpg);
+    background-size: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mt-15{
+    margin-top: 150px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-body {
-  background-image: url(../img/man-2264825_1920.jpg);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-size: 100%;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-h2{
-  font-family: 'Zen Dots', cursive;
-  font-size: 1.5rem;
-}
-/*Boton*/
-.boton{
-  background-color: #2085b4;
-  color: white;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  width: 11rem;
-  height: 3rem;
-  border: none;
-  margin:0 auto;
-}
-
-
-.contenedor{
-  width: 600px;
-  max-width: 120rem;
-  margin: 0 auto 0 auto;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 1rem;
-  
-}
-.sesion{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.3);
-  
-}
-
-.contenido-form input{
-   height: 2.5rem;
-   width: 20rem;
-   margin: 0 auto;
-   border-radius: 10px;
-   font-size: 1.5rem;
-}
-.titulo{
-  color:#2085b4;
-  margin: 0 auto;
-}
-
-/*Navegation bar*/
-.navegacion{
-  display: flex;
-  flex-direction: column;
+.bg-t{
+    
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top:15px;
+    border-radius: 10px;
 }
