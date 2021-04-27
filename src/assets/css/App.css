@@ -21,3 +21,27 @@ body{
 .mg-r{
     margin-right: 60px;
 }
+.barra-content{
+    width: 90%;
+}
+.barra{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    margin-top: 10px;
+    width: 130px;
+    height: 60px;
+}
+.botones{
+    display: flex;
+    gap: 2rem;
+}
+.botones li{
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    text-transform: uppercase;
+}
