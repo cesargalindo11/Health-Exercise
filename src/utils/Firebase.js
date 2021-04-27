@@ -3,13 +3,13 @@ import 'firebase/firestore'
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA82TCZgUu6jbmGj3ypoAPRmKQf_EG4rAw",
-  authDomain: "prueba-99e84.firebaseapp.com",
-  databaseURL: "https://prueba-99e84.firebaseio.com",
-  projectId: "prueba-99e84",
-  storageBucket: "prueba-99e84.appspot.com",
-  messagingSenderId: "451436873999",
-  appId: "1:451436873999:web:1f61036141c055f445167a"
+  apiKey: "AIzaSyDx102PBRftLlF4_ggcmkdABoKU2oyBG1M",
+  authDomain: "pruebasesion.firebaseapp.com",
+  projectId: "pruebasesion",
+  storageBucket: "pruebasesion.appspot.com",
+  messagingSenderId: "552503177778",
+  appId: "1:552503177778:web:1b461d3d47e460bc01022b",
+  measurementId: "G-SR9DX8MPTE"
 };
 
 const fb = firebase.initializeApp(firebaseConfig);
