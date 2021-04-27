@@ -27,11 +27,11 @@ function Login() {
             var user = userCredential.user;
             alert(user);
             console.log('correcto');
-            <link rel="stylesheet" href="www.facebook.com"/>
+            
             
           })
           .catch((error) => {
-              console.log('incorrecto')
+            console.log('incorrecto')
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorCode,errorMessage);
