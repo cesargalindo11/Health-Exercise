@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Inicio from './components/Inicio'
 import Menu from './components/Menu'
 import './assets/css/App.css'
+import './firebaseConfig'
 
 import {
   BrowserRouter as Router,

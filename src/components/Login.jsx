@@ -8,33 +8,20 @@ function Login() {
     const [email,setEmail] = useState("")
     const [pass, setPass]  = useState("")
 
-    const registrarUsuario = (e) => {
-        e.preventDefault()
-        firebase.auth().createUserWithEmailAndPassword(email,pass)
-            .then((userCredential)=>alert('Usuario Registrado'))
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorCode,errorMessage);
-                
-              });
-    }
+
     function iniciarSesion() {
      
         firebase.auth().signInWithEmailAndPassword(email, pass)
-          .then((userCredential) => {
-  
-            var user = userCredential.user;
-            alert(user);
-            console.log('correcto');
-            
-            
-          })
-          .catch((error) => {
-            console.log('incorrecto')
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert(errorCode,errorMessage);
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          alert(user)
+          // ...
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorCode,errorMessage)
         });
     
       }
