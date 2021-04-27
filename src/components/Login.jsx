@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import '../assets/css/App.css'
-//import firebase from '../utils/Firebase'
-import firebase from 'firebase/app'
+import firebase from '../firebaseConfig'
 import 'firebase/auth';
 import '../App'
 function Login() {
-
-
-    //  const [correo, setCorreo] = useState('')
-    // const [password, setPassword] = useState('')
 
     const [email,setEmail] = useState("")
     const [pass, setPass]  = useState("")
@@ -32,17 +27,19 @@ function Login() {
             var user = userCredential.user;
             alert(user);
             console.log('correcto');
-            <link rel="stylesheet" href="www.facebook.com"/>
+            
             
           })
           .catch((error) => {
-              console.log('incorrecto')
+            console.log('incorrecto')
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorCode,errorMessage);
         });
     
       }
+      
+
 
 
 
@@ -97,5 +94,4 @@ function Login() {
 }
 
 
-
-export default Login;
+export default Login
