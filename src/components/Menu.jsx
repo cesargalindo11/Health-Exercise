@@ -14,7 +14,7 @@ const Menu = () => {
         <ul className='barra '>
 
           <div className="logo">
-            <a href="/#"><img src="logo192.png" alt="logo" /> </a>
+            <a href="/#"><img src="logo.png" alt="logo" /> </a>
           </div>
           <div className="botones nav">
             
