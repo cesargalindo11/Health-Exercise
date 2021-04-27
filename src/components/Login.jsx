@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import '../assets/css/App.css'
-//import firebase from '../utils/Firebase'
-import firebase from 'firebase/app'
+import firebase from '../firebaseConfig'
 import 'firebase/auth';
 import '../App'
 function Login() {
-
-
-    //  const [correo, setCorreo] = useState('')
-    // const [password, setPassword] = useState('')
 
     const [email,setEmail] = useState("")
     const [pass, setPass]  = useState("")
@@ -43,6 +38,8 @@ function Login() {
         });
     
       }
+      
+
 
 
 
@@ -97,5 +94,4 @@ function Login() {
 }
 
 
-
-export default Login;
+export default Login
