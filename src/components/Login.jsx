@@ -1,44 +1,43 @@
-import React, { useState } from 'react'
-import '../assets/css/App.css'
-import firebase from '../firebaseConfig'
-import 'firebase/auth';
+import React, { useState } from 'react';
+import '../assets/css/App.css';
+import { useHistory } from 'react-router-dom';
+import { auth } from '../firebaseConfig';
+
 import '../App'
-function Login() {
+const Login = () =>{
 
-    const [email,setEmail] = useState("")
-    const [pass, setPass]  = useState("")
-
-
-    function iniciarSesion() {
-     
-        firebase.auth().signInWithEmailAndPassword(email, pass)
-        .then((userCredential) => {
-          // Signed in
-          var user = userCredential.user;
-          alert(user)
-          // ...
-        })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorCode,errorMessage)
-        });
+    const historial = useHistory()
+    const [email, setEmail] = useState('')
+    const [pass, setPass] = useState('')
+    const [msgerror, setMsgError] = useState(null)
     
+    const LoginUsuario = (e) => {
+        e.preventDefault()
+        auth.signInWithEmailAndPassword(email, pass)
+        // .then( (r) => console.log(r))
+        .then( (r) => {
+          // luego de logearse mandamos a las targetas
+          historial.push('/')
+          
+          console.log("felicidades")
+        })
+        .catch( (err) => {
+          // auth/wrong-password
+          if(err.code == 'auth/wrong-password'){
+            setMsgError('password incorrecto')
+          }
+          //para mas errores
+          alert('contrasena incorrecta')
+        })
       }
       
-
-
-
-
-
-
     return (
         <div className=' row mt-15'>
 
             <div className='col'></div>
             <div className='col bg-t'>
 
-                <form onSubmit={iniciarSesion} className='form-group'>
+                <form onSubmit={LoginUsuario} className='form-group'>
 
 
                     <div className="input-group mb-3">
@@ -67,12 +66,26 @@ function Login() {
                         />
                     </div>
 
-                    <button className="btn btn-info btn-block mt-4">
+                    <button 
+                    onClick= {LoginUsuario}
+                    className="btn btn-info btn-block mt-4">
                         Iniciar Sesion
                    </button>
 
                 </form>
 
+                {
+          msgerror != null
+          ? (
+            <div>
+              yarn
+              {msgerror}
+            </div>
+          )
+          : (
+            <span></span>
+          )
+        }
             </div>
             <div className='col'></div>
 

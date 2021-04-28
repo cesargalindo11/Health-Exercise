@@ -45,3 +45,11 @@ img{
     margin-right: 15px;
     text-transform: uppercase;
 }
+.boton-cerrar{
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    text-transform: uppercase;
+}
