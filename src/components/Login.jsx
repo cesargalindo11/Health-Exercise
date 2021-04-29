@@ -15,11 +15,13 @@ const Login = () =>{
         e.preventDefault()
         auth.signInWithEmailAndPassword(email, pass)
         // .then( (r) => console.log(r))
-        .then( (r) => {
+        .then( (userCredential) => {
           // luego de logearse mandamos a las targetas
+          var user = userCredential.user;
+          alert(user)
           historial.push('/')
           
-          console.log("felicidades")
+         
         })
         .catch( (err) => {
           // auth/wrong-password
