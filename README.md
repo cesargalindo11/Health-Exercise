@@ -10,6 +10,8 @@ npm install --global yarn (Yarn 1.22.10)
 
 yarn add firebase (Firebase 8.4.2)
 
+ yarn add react-toastify
+
 yarn start
 
 Nota: Antes de ejecutar yarn start fijarse las dependencias en el package.json
