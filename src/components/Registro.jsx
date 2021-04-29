@@ -57,14 +57,14 @@ const Registro = () => {
   const validEdad = (str) => {
     var pattern = new RegExp(
 
-      ""
+      "[10-60]"
     );
     return !!pattern.test(str);
   };
   const validPeso = (str) => {
     var pattern = new RegExp(
 
-      ""
+      "[40-150]"
     );
     return !!pattern.test(str);
   };
@@ -218,6 +218,7 @@ const Registro = () => {
               onChange={ handleInputChange}
               name="Sexo" 
               value='mujer'
+              required
               
             />
             <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio1">Mujer</label>
@@ -228,6 +229,7 @@ const Registro = () => {
               onChange={handleInputChange}
               name="Sexo" 
               value='hombre'
+              required
               
             />
             <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio2">Hombre</label>
