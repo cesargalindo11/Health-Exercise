@@ -58,13 +58,22 @@ const Registro = () => {
 
     console.log(pattern);
 
+<<<<<<< HEAD
+=======
+      "[10-60]"
+    );
+>>>>>>> f9c33f8d0a99a6e1ec598b93d382a0a6fea52db6
     return !!pattern.test(str);
   };
 
   const validPeso = (str) => {
     var pattern = new RegExp(
 
+<<<<<<< HEAD
      "(^[0-9]{1,3}$|^[0-9]{1,3}\.[0-9]{1,3}$)"
+=======
+      "[40-150]"
+>>>>>>> f9c33f8d0a99a6e1ec598b93d382a0a6fea52db6
     );
     return !!pattern.test(str);
   };
@@ -236,6 +245,10 @@ const Registro = () => {
               name="Sexo" 
               value='hombre'
               required
+<<<<<<< HEAD
+=======
+              
+>>>>>>> f9c33f8d0a99a6e1ec598b93d382a0a6fea52db6
             />
             <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio2">Hombre</label>
 
