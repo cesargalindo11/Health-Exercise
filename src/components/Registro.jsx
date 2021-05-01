@@ -47,7 +47,7 @@ const Registro = () => {
   const validNomAp = (str) => {
     var pattern = new RegExp(
 
-      "[A-Za-z0-9]{4,30}"
+      "[A-Za-z0-9]{3,30}"
 
     );
     return !!pattern.test(str);
