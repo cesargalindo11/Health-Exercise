@@ -47,24 +47,24 @@ const Registro = () => {
   const validNomAp = (str) => {
     var pattern = new RegExp(
 
-      "[A-Za-z0-9]{5,30}"
-
+      "[A-Za-z0-9]{4,30}"
 
     );
     return !!pattern.test(str);
   };
 
   const validEdad = (str) => {
-    var pattern = new RegExp(
+    let pattern = /[10-60]/;
 
-      ""
-    );
+    console.log(pattern);
+
     return !!pattern.test(str);
   };
+
   const validPeso = (str) => {
     var pattern = new RegExp(
 
-      ""
+     "(^[0-9]{1,3}$|^[0-9]{1,3}\.[0-9]{1,3}$)"
     );
     return !!pattern.test(str);
   };
@@ -183,29 +183,35 @@ const Registro = () => {
 
           <div className="input-group mb-3">
             <div className='input-group-prepend'>
-              <span className="input-group-text">Datos</span>
+              <span className="input-group-text">Edad</span>
             </div>
             <input
               className='form-control'
-              placeholder='Edad'
+              placeholder='Introduce tu Edad'
               type="number"
               onChange={handleInputChange}
               value={values.Edad}
               name="Edad"
               minLength="10"
               maxLength="60"
+              required
+
             />
+
+            <div className='input-group-prepend'>
+              <span className="input-group-text">Peso</span>
+            </div>
             <input
               className='form-control'
-              placeholder='Peso'
+              placeholder='Introduce tu Peso'
               type="number"
               onChange={handleInputChange}
               value={values.Peso}
               name="Peso" 
               minLength="40"
               maxLength="150"
+              required
               />
-
           </div>
 
           <div className="form-check form-check-inline mb-3">
@@ -218,6 +224,7 @@ const Registro = () => {
               onChange={ handleInputChange}
               name="Sexo" 
               value='mujer'
+              required
               
             />
             <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio1">Mujer</label>
@@ -228,7 +235,7 @@ const Registro = () => {
               onChange={handleInputChange}
               name="Sexo" 
               value='hombre'
-              
+              required
             />
             <label className="form-check-label form-check form-check-inline text-white" for="inlineRadio2">Hombre</label>
 

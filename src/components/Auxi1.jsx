@@ -17,7 +17,7 @@ const Registro = () => {
     Peso: '',
     Sexo:'',
     Email: '',
-    Password: '',
+    Password: ''
   };
 
   const [values, setValues] = useState(initialStateValues);
