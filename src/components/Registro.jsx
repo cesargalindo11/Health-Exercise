@@ -82,6 +82,7 @@ const LoginUsuario = () => {
     let pattern = /[1-5][1-9]/;
 
     return !!pattern.test(str);
+
   };
 
   const validEmail = (str) => {
@@ -95,7 +96,6 @@ const LoginUsuario = () => {
    
     return !!pattern.test(str);
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
