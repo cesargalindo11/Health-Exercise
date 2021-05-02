@@ -16,8 +16,8 @@ const Registro = () => {
   const initialStateValues = {
     Nombres: '',
     Apellidos: '',
-    Edad: null,
-    Peso: null,
+    Edad: '',
+    Peso: '',
     Email: '',
     Password: '',
   };
@@ -61,29 +61,20 @@ const Registro = () => {
   };
 
   const validPeso = (str) => {
-    var pattern = new RegExp(
-
-     "(^[0-9]{1,3}$|^[0-9]{1,3}\.[0-9]{1,3}$)"
-    );
+    let pattern = /[1-5][1-9]/;
     return !!pattern.test(str);
+
   };
 
   const validEmail = (str) => {
-    var pattern = new RegExp(
+    let pattern =  /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
 
-      "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"
-
-    );
     return !!pattern.test(str);
   };
   const validPass = (str) => {
-    var pattern = new RegExp(
-
-      ""
-    );
+    let pattern =  /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z0-9-])\S{5,30}$/i;
     return !!pattern.test(str);
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
