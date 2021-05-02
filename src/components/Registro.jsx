@@ -202,6 +202,7 @@ const Registro = () => {
               maxLength="150"
               required
               />
+              <span className="btn text-white">Kg</span>
           </div>
 
           <div className="form-check form-check-inline mb-3">
