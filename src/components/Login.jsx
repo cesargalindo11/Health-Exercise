@@ -11,14 +11,14 @@ const Login = () =>{
     const [pass, setPass] = useState('')
     const [msgerror, setMsgError] = useState(null)
     
-    const LoginUsuario = (e) => {
+    /*const LoginUsuario = (e) => {
         e.preventDefault()
         auth.signInWithEmailAndPassword(email, pass)
         // .then( (r) => console.log(r))
         .then( (userCredential) => {
           // luego de logearse mandamos a las targetas
           var user = userCredential.user;
-          alert(user)
+          //alert(user)
           historial.push('/')
           
          
@@ -31,7 +31,20 @@ const Login = () =>{
           //para mas errores
           alert('contrasena incorrecta')
         })
-      }
+      }*/
+      const LoginUsuario = (e) => {
+        e.preventDefault()
+        auth.createUserWithEmailAndPassword(email,pass)
+            .then((userCredential)=>alert('Usuario Registrado'))
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorCode,errorMessage);
+                
+              });
+    }
+
+
       
     return (
         <div className=' row mt-15'>

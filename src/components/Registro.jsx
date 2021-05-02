@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/App.css';
-import { store } from '../firebaseConfig';
+import { store,auth } from '../firebaseConfig';
 import { toast } from "react-toastify";
 
 
@@ -10,41 +10,58 @@ const Registro = () => {
 
 
   const [currentId, setCurrentId] = useState("");
-  
+  const [correo,setCorreo] =useState("");
+  const [contra,setContra] =useState("");
   
 
   const initialStateValues = {
     Nombres: '',
     Apellidos: '',
-    Edad: null,
-    Peso: null,
+    Edad: '',
+    Peso: '',
     Email: '',
     Password: '',
   };
 
+
   const [values, setValues] = useState(initialStateValues);
   const [sexo,setSexo]=useState("");
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-
-   
-    
+    setCorreo(values.Email);
+    setContra(values.Password);
+     
   };
 
-
   const registrarUsuario = async () => {
+    
     try {
 
       await store.collection("registro").doc().set(values);
-      toast("Usuario Registrado", {
+      toast("Te Registraste con Exito", {
         type: "success",
+        
       });
 
     } catch (error) {
       console.error(error);
     }
+    LoginUsuario();
   };
+
+const LoginUsuario = () => {
+  
+  auth.createUserWithEmailAndPassword(correo,contra)
+  .then((userCredential)=>console.log('Usuario Registrado'))
+  .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      
+    });
+}
+
   const validNomAp = (str) => {
 
     let pattern = /^(?=.{3,30}$)[a-z]+(?:\s+[a-z]+)*$/i
@@ -61,26 +78,21 @@ const Registro = () => {
   };
 
   const validPeso = (str) => {
-    var pattern = new RegExp(
 
-     "(^[0-9]{1,3}$|^[0-9]{1,3}\.[0-9]{1,3}$)"
-    );
+    let pattern = /[1-5][1-9]/;
+
     return !!pattern.test(str);
   };
 
   const validEmail = (str) => {
-    var pattern = new RegExp(
+    let pattern = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
 
-      "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"
-
-    );
+    
     return !!pattern.test(str);
   };
   const validPass = (str) => {
-    var pattern = new RegExp(
-
-      ""
-    );
+    let pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z0-9-])\S{5,30}$/i;
+   
     return !!pattern.test(str);
   };
 
@@ -114,8 +126,9 @@ const Registro = () => {
     }
 
 
-    registrarUsuario(values);
-    setValues({ ...initialStateValues });
+      registrarUsuario(values);
+      setValues({ ...initialStateValues });
+
   };
 
   const getLinkById = async (id) => {
@@ -191,8 +204,8 @@ const Registro = () => {
               onChange={handleInputChange}
               value={values.Edad}
               name="Edad"
-              minLength="10"
-              maxLength="60"
+              //minLength="10"
+              //maxLength="60"
               required
 
             />
@@ -207,8 +220,8 @@ const Registro = () => {
               onChange={handleInputChange}
               value={values.Peso}
               name="Peso" 
-              minLength="40"
-              maxLength="150"
+              //minLength="40"
+              //maxLength="150"
               required
               />
           </div>
