@@ -80,28 +80,28 @@ const Registro = () => {
     e.preventDefault();
     //nombres
     if (!validNomAp(values.Nombres)) {
-      return toast("Nombre Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Nombre no Valido", { type: "warning", autoClose: 1000 });
     }
     //Apellidos
     if (!validNomAp(values.Apellidos)) {
-      return toast("Apellidos Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Apellidos no Valido", { type: "warning", autoClose: 1000 });
     }
     //edad
     if (!validEdad(values.Edad)) {
-      return toast("Edad Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Edad no Valido", { type: "warning", autoClose: 1000 });
     }
 
     //peso
     if (!validPeso(values.Peso)) {
-      return toast("Peso Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Peso no Valido", { type: "warning", autoClose: 1000 });
     }
     //validacion Correo
     if (!validEmail(values.Email)) {
-      return toast("Correo Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Correo no Valido", { type: "warning", autoClose: 1000 });
     }
     ///Contrasenia
     if (!validPass(values.Password)) {
-      return toast("Contrasenia Invalido", { type: "warning", autoClose: 1000 });
+      return toast("Contrasena no Valido", { type: "warning", autoClose: 1000 });
     }
 
 
