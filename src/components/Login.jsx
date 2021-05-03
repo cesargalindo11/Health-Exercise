@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../assets/css/App.css';
 import { useHistory } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
+import { toast } from "react-toastify";
 
 import '../App'
 const Login = () =>{
@@ -11,38 +12,21 @@ const Login = () =>{
     const [pass, setPass] = useState('')
     const [msgerror, setMsgError] = useState(null)
     
-    /*const LoginUsuario = (e) => {
+    const LoginUsuario = (e) => {
         e.preventDefault()
         auth.signInWithEmailAndPassword(email, pass)
-        // .then( (r) => console.log(r))
+
         .then( (userCredential) => {
-          // luego de logearse mandamos a las targetas
           var user = userCredential.user;
-          //alert(user)
           historial.push('/')
           
          
         })
         .catch( (err) => {
-          // auth/wrong-password
-          if(err.code == 'auth/wrong-password'){
-            setMsgError('password incorrecto')
-          }
-          //para mas errores
-          alert('contrasena incorrecta')
+          return toast("Correo y/o Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
         })
-      }*/
-      const LoginUsuario = (e) => {
-        e.preventDefault()
-        auth.createUserWithEmailAndPassword(email,pass)
-            .then((userCredential)=>alert('Usuario Registrado'))
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorCode,errorMessage);
-                
-              });
-    }
+      }
+     
 
 
       
@@ -93,7 +77,7 @@ const Login = () =>{
           msgerror != null
           ? (
             <div>
-              yarn
+              
               {msgerror}
             </div>
           )
