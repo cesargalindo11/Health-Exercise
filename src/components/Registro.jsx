@@ -85,9 +85,13 @@ const Registro = () => {
   };
 
   const validPeso = (str) => {
+<<<<<<< HEAD
 
     let pattern = /^([4-8][0-9]|[0-1][0-5][0-0])$/;
 
+=======
+    let pattern = /^([4-8][0-9]|[0-1][0-5][0-0])$/;
+>>>>>>> 60d78cf8e0c02b3d7336068497be8889bf2a4a16
     return !!pattern.test(str);
 
   };
@@ -106,6 +110,7 @@ const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
       //nombres
       if (!validNomAp(values.Nombres)) {
         return toast("Nombre no Valido", { type: "warning", autoClose: 1000 });
@@ -144,6 +149,34 @@ const Registro = () => {
       //registrarUsuario(values);
       //setValues({ ...initialStateValues });
  
+=======
+    //nombres
+    if (!validNomAp(values.Nombres)) {
+      return toast("Nombre no Valido", { type: "warning", autoClose: 1000 });
+    }
+    //Apellidos
+    if (!validNomAp(values.Apellidos)) {
+      return toast("Apellidos no Valido", { type: "warning", autoClose: 1000 });
+    }
+    //edad
+    if (!validEdad(values.Edad)) {
+      return toast("Edad no Valido", { type: "warning", autoClose: 1000 });
+    }
+
+    //peso
+    if (!validPeso(values.Peso)) {
+      return toast("Peso no Valido", { type: "warning", autoClose: 1000 });
+    }
+    //validacion Correo
+    if (!validEmail(values.Email)) {
+      return toast("Correo no Valido", { type: "warning", autoClose: 1000 });
+    }
+    ///Contrasenia
+    if (!validPass(values.Password)) {
+      return toast("Contrasena no Valido", { type: "warning", autoClose: 1000 });
+    }
+
+>>>>>>> 60d78cf8e0c02b3d7336068497be8889bf2a4a16
 
   };
 
@@ -239,7 +272,12 @@ const Registro = () => {
               //minLength="40"
               //maxLength="150"
               required
+<<<<<<< HEAD
             />
+=======
+              />
+              <span className="btn text-white">Kg</span>
+>>>>>>> 60d78cf8e0c02b3d7336068497be8889bf2a4a16
           </div>
 
           <div className="form-check form-check-inline mb-3">
