@@ -11,7 +11,7 @@ const Registro = () => {
   const [currentId, setCurrentId] = useState("");
   const [correo, setCorreo] = useState("");
   const [contra, setContra] = useState("");
-  var ban ;
+  
 
 
   const initialStateValues = {
