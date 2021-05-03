@@ -60,11 +60,7 @@ const Registro = () => {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;       
-        if(errorCode!=null){
-          ban=false;
-        }else{
-          ban=true;
-        }
+
       });
     }
   }
