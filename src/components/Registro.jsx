@@ -160,6 +160,7 @@ const Registro = () => {
 
 
   return (
+    
     <div className='row mt-5'>
 
       <div className='col'></div>
