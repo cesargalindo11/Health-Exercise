@@ -17,10 +17,3 @@ yarn start
 Nota: Antes de ejecutar yarn start fijarse las dependencias en el package.json
 
 En el caso de que no estén las dependencias ejecutar yarn add bootstrap firebase react-router-dom
-
-
-Para ingresar a revisar la Base de Datos en Firebase:
-
-Correo.- saludejercicio7@gmail.com
-
-Contraseña.- publica7
