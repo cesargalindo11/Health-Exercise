@@ -8,6 +8,7 @@ import './assets/css/App.css'
 import './firebaseConfig'
 import{ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/react-toastify.cjs.development'
+import Nivel from "./components/Niveles"
 
 
 import {
@@ -39,6 +40,7 @@ function App() {
         </Router>
 
       <ToastContainer />
+      <Nivel/>
       </div>
   );
 }

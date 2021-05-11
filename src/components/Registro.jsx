@@ -25,7 +25,7 @@ const Registro = () => {
 
 
   const [values, setValues] = useState(initialStateValues);
-  const [sexo, setSexo] = useState("");
+  const [links, setLinks] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -51,23 +51,31 @@ const Registro = () => {
     }
     
   };
-
- const LoginUsuario = () => {
-
-  if(values.Email!='' && values.Password!=''){
-    auth.createUserWithEmailAndPassword(correo, contra)
-      .then((userCredential) => console.log('Usuario Registrado'))
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;       
-        if(errorCode!=null){
-          ban=false;
-        }else{
-          ban=true;
-        }
-      });
-    }
+  const recorreArray = arr => {
+    let i = 0;
+    let aux='';
+    do{
+      //if(arr[i].name)
+      //const aux1=arr[0];
+      
+        aux=arr[i];
+        if(aux.name===aux.name)
+          console.log(aux.url);
+      i++;
+    }while(i<=arr.length-1);
+  
   }
+  const getCorreo = async () => {
+    auth.collection("registro").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      //console.log(docs);
+      setLinks(docs);
+      recorreArray(docs);
+    });
+  };
 
   const validNomAp = (str) => {
 
@@ -78,7 +86,7 @@ const Registro = () => {
 
   const validEdad = (str) => {
 
-    let pattern = /[1-5][1-9]/;
+    const pattern = /^[1-5][1-9]$/;
 
     return !!pattern.test(str);
 

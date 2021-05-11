@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../assets/css/App.css';
 import { useHistory } from 'react-router-dom';
-import { auth } from '../firebaseConfig';
-import { toast } from "react-toastify";
+import { store } from '../firebaseConfig';
+//import { toast } from "react-toastify";
+//import Nivel from './Niveles';
 
 import '../App'
 const Login = () =>{
@@ -11,22 +12,67 @@ const Login = () =>{
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [msgerror, setMsgError] = useState(null)
+    //const [links, setLinks] = useState([]);
+    const [values, setValues] = useState('');
+    const docs = [];
+    const Correo=[];
+    const Contra=[];
+ 
+    console.log(Correo);
     
-    const LoginUsuario = (e) => {
-        e.preventDefault()
-        auth.signInWithEmailAndPassword(email, pass)
+    const handleInputChange = (e) => {
+      e.preventDefault()
+      const { name, value } = e.target;
+      setValues({ ...values, [name]: value });
+      setEmail(values.correo) ;
+      setPass(values.password) ;
 
-        .then( (userCredential) => {
-          var user = userCredential.user;
-          historial.push('/')
-          
-         
-        })
-        .catch( (err) => {
-          return toast("Correo y/o Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
-        })
-      }
+    };
+    
+const LoginUsuario = () => {
+  //e.preventDefault()
+  try{
+    let i = 0;
+    let aux='';
+    console.log(email);
+    do{
      
+      
+        aux=docs[i];
+        //if(aux.Email===email && aux.Password===pass)
+       // console.log(pass);
+          console.log(aux.Nombres);
+          //historial.push('/')
+      i++;
+    }while(i<=docs.length-1);
+  }catch{
+
+  }
+  
+
+}
+
+
+
+  const getUsuario = async () => {
+    store.collection("registro").onSnapshot((querySnapshot) => {
+      //const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      //console.log(docs);
+      
+      //setLinks(docs);
+      
+      LoginUsuario(docs);
+    });
+  };
+
+  useEffect(() => {
+
+    getUsuario();
+  }, []);
+
 
 
       
@@ -36,7 +82,7 @@ const Login = () =>{
             <div className='col'></div>
             <div className='col bg-t'>
 
-                <form onSubmit={LoginUsuario} className='form-group'>
+                <form  className='form-group'>
 
 
                     <div className="input-group mb-3">
@@ -48,7 +94,7 @@ const Login = () =>{
                             placeholder='Introduce tu correo electronico'
                             type="email"
                             name="correo"
-                            onChange={(e) => { setEmail(e.target.value)}}
+                            onChange={handleInputChange}
                         />
                     </div>
 
@@ -61,12 +107,12 @@ const Login = () =>{
                             placeholder='Introduce una contraseña'
                             type="password"
                             name="password"
-                            onChange={(e) => { setPass(e.target.value)}}
+                            onChange={handleInputChange}
                         />
                     </div>
 
                     <button 
-                    onClick= {LoginUsuario}
+                   onClick={LoginUsuario}
                     className="btn btn-info btn-block mt-4">
                         Iniciar Sesion
                    </button>
@@ -94,3 +140,20 @@ const Login = () =>{
 
 
 export default Login
+
+   /* const LoginUsuario = (e) => {
+        e.preventDefault()
+        auth.signInWithEmailAndPassword(email, pass)
+
+        .then( (userCredential) => {
+          var user = userCredential.user;
+          historial.push('/Nivel')
+          
+         
+        })
+        .catch( (err) => {
+          return toast("Correo y/o Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
+        })
+      }*/
+     
+
