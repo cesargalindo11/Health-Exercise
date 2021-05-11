@@ -51,6 +51,7 @@ const Registro = () => {
     }
     
   };
+<<<<<<< HEAD
   const recorreArray = arr => {
     let i = 0;
     let aux='';
@@ -64,6 +65,20 @@ const Registro = () => {
       i++;
     }while(i<=arr.length-1);
   
+=======
+
+ const LoginUsuario = () => {
+
+  if(values.Email!='' && values.Password!=''){
+    auth.createUserWithEmailAndPassword(correo, contra)
+      .then((userCredential) => console.log('Usuario Registrado'))
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;       
+
+      });
+    }
+>>>>>>> develop
   }
   const getCorreo = async () => {
     auth.collection("registro").onSnapshot((querySnapshot) => {
@@ -172,6 +187,7 @@ const Registro = () => {
 
 
   return (
+    
     <div className='row mt-5'>
 
       <div className='col'></div>
@@ -245,7 +261,12 @@ const Registro = () => {
               //minLength="40"
               //maxLength="150"
               required
+<<<<<<< HEAD
+              />
+              <label className="label text-white">Kg</label>
+=======
             />
+>>>>>>> 00fe6641222c63a086f431019f556ba1c6abfa9f
           </div>
 
           <div className="form-check form-check-inline mb-3">
