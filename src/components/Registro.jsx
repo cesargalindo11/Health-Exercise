@@ -74,7 +74,7 @@ const Registro = () => {
 
   const validEdad = (str) => {
 
-    let pattern = /[1-5][1-9]/;
+    let pattern = /([1-5][1-9])/;
 
     return !!pattern.test(str);
 
@@ -160,7 +160,6 @@ const Registro = () => {
 
 
   return (
-    
     <div className='row mt-5'>
 
       <div className='col'></div>
@@ -234,8 +233,12 @@ const Registro = () => {
               //minLength="40"
               //maxLength="150"
               required
+<<<<<<< HEAD
               />
               <label className="label text-white">Kg</label>
+=======
+            />
+>>>>>>> e69a0441d7778b4e9f824aaa98ce235b2b985d2a
           </div>
 
           <div className="form-check form-check-inline mb-3">
