@@ -18,6 +18,10 @@ import {
 
 
 import "react-toastify/dist/ReactToastify.css";
+import Niveles from "./components/Niveles"
+import CategoriaPrincipiante from "./components/CategoriaPrincipiante"
+import CategoriaIntermedio from "./components/CategoriaIntermedio"
+import CategoriaAvanzado from "./components/CategoriaAvanzado"
 
 function App() {
 
@@ -34,13 +38,17 @@ function App() {
             <Route exact path='/' component={Inicio}></Route>
             <Route path='/registro' component={Registro}></Route>
             <Route path='/login' component={Login}></Route>
-            <Route path='/niveles' component={Niveles}></Route>
-
+            
           </Switch>
 
         </Router>
 
       <ToastContainer />
+      <Niveles></Niveles>
+      <CategoriaPrincipiante></CategoriaPrincipiante>
+      <CategoriaIntermedio></CategoriaIntermedio>
+      <CategoriaAvanzado></CategoriaAvanzado>
+
       </div>
   );
 }
