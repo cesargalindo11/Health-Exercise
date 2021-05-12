@@ -1,8 +1,8 @@
 import React from 'react';
 import Registro from './components/Registro'
-//import Auxi from './components/Auxi'
 import Login from './components/Login'
 import Inicio from './components/Inicio'
+import Niveles from './components/Niveles'
 import Menu from './components/Menu'
 import './assets/css/App.css'
 import './firebaseConfig'
@@ -34,6 +34,8 @@ function App() {
             <Route exact path='/' component={Inicio}></Route>
             <Route path='/registro' component={Registro}></Route>
             <Route path='/login' component={Login}></Route>
+            <Route path='/niveles' component={Niveles}></Route>
+
           </Switch>
 
         </Router>

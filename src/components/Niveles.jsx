@@ -1,29 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import {Link, useHistory} from 'react-router-dom';
-const Niveles = () => {
+import React ,{ useEffect, useState } from 'react';
+import { Link,useHistory} from 'react-router-dom'
+import './Login'
+import { store } from '../firebaseConfig';
+import '../assets/css/App.css';
+import Login from "../components/Login"
+
+const Niveles = (props) => {
+
+  const {valores}=props;
+ 
+console.log(valores);
+
+  const historial = useHistory()
+  const [usuario, setUsuario] = useState(null)
+  useEffect( () => {
+
+    store.collection("registro").doc(valores).get()
+
+      .then(function (snapshot) {
+        if (snapshot.exists) {
+
+          var email = snapshot.get("Email");
+          setUsuario(email)
+        }
+      })
+
+  },[])
 
   const CerrarSesion = () => {
 
-    auth.signOut()
+    store.signOut()
     setUsuario(null)
     historial.push('/')
 
   }
 
-  return(
+
+  return (
     <div>
-      <h1>Niveles</h1>
-      {
+
+
+      <nav className='.barra-content'>
+
+        {
           usuario
-          ? ( <button
+          ? ( <button 
               onClick={CerrarSesion}
-              className='btn btn-danger'>
+              className='barra btn btn-danger '>
               Cerrar sesion
               </button> )
           : ( <span></span> )
         }
-    </div>
-  )
-}
 
+
+      </nav>
+    </div>
+
+  )
+  }
 export default Niveles;
