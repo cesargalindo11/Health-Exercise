@@ -1,33 +1,53 @@
 import React, { useState } from 'react';
 import '../assets/css/App.css';
 import { useHistory } from 'react-router-dom';
-import { auth } from '../firebaseConfig';
+import { store } from '../firebaseConfig';
 import { toast } from "react-toastify";
 
 import '../App'
-const Login = () =>{
+const Login = () => {
 
-    const historial = useHistory()
-    const [email, setEmail] = useState('')
-    const [pass, setPass] = useState('')
-    const [msgerror, setMsgError] = useState(null)
-    
-    const LoginUsuario = (e) => {
-        e.preventDefault()
-        auth.signInWithEmailAndPassword(email, pass)
+  const historial = useHistory()
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
 
-        .then( (userCredential) => {
-          var user = userCredential.user;
-          historial.push('/')
-          
-         
-        })
-        .catch( (err) => {
-          return toast("Correo y/o Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
-        })
-      }
-     
 
+
+
+  const LoginUsuario = (e) => {
+    e.preventDefault()
+    store.collection("registro").doc(email).get()
+
+      .then(function (snapshot) {
+        if (snapshot.exists) {
+
+          var pwd = snapshot.get("Password");
+          if (pwd === pass) {
+            
+            const usuarioGet = {
+              Nombres: snapshot.get("Nombres"),
+              Apellidos: snapshot.get("Apellidos"),
+              Edad:snapshot.get("Edad"),
+              Peso: snapshot.get("Peso"),
+              Email: snapshot.get("Email"),
+              Password:snapshot.get("Password"),
+            };
+            historial.push('/');
+          } else {
+
+            return toast(" Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
+
+          }
+
+        } else {
+
+          return toast("El correo no existe", { type: "warning", autoClose: 1000 });
+
+        } // true
+
+
+      });
+  }
 
       
     return (
@@ -72,19 +92,6 @@ const Login = () =>{
                    </button>
 
                 </form>
-
-                {
-          msgerror != null
-          ? (
-            <div>
-              
-              {msgerror}
-            </div>
-          )
-          : (
-            <span></span>
-          )
-        }
             </div>
             <div className='col'></div>
 
