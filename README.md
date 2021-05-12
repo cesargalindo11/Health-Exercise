@@ -1,2 +1,7 @@
-Ejecutar 
-yarn install  o npm install
+Ejecutar :
+
+yarn install  
+
+o
+
+npm install
