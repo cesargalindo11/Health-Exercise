@@ -234,12 +234,8 @@ const Registro = () => {
               //minLength="40"
               //maxLength="150"
               required
-<<<<<<< HEAD
               />
               <label className="label text-white">Kg</label>
-=======
-            />
->>>>>>> 00fe6641222c63a086f431019f556ba1c6abfa9f
           </div>
 
           <div className="form-check form-check-inline mb-3">
