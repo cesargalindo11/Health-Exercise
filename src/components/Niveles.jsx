@@ -9,7 +9,7 @@ const Niveles = () => {
 
   const CerrarSesion = () => {
 
-    store.signOut()
+   // store.signOut()
     setUsuario(null)
     historial.push('/')
 
