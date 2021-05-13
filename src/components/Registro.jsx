@@ -183,7 +183,7 @@ const Registro = () => {
             </div>
             <input
               className='form-control'
-              placeholder='Introduce tu Edad'
+              placeholder=''
               type="number"
               onChange={handleInputChange}
               value={values.Edad}
@@ -197,7 +197,7 @@ const Registro = () => {
             </div>
             <input
               className='form-control'
-              placeholder='Introduce tu Peso'
+              placeholder=''
               type="number"
               onChange={handleInputChange}
               value={values.Peso}

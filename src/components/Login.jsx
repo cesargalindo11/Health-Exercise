@@ -33,8 +33,6 @@ const Login = () => {
              
               usuarioGet.push(correo);
             
-              //console.log(usuarioGet);
-            
             historial.push("/niveles")
           } else {
 
