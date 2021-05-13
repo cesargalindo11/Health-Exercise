@@ -61,12 +61,11 @@ const Registro = () => {
 
   const validEdad = (str) => {
 
-    if(str==='20' || str==='30' || str==='40' ||str ==='50'){
-      return true;
+    let num = parseInt(str)
+    if(num>10 && num<60){
+        return true;
     }else{
-      let pattern = /[1-5][1-9]/;
-
-      return !!pattern.test(str);
+      return false;
     }
   
 
