@@ -19,11 +19,11 @@ const CategoriaPrincipiante = () => {
             </div>
             <div class="container p-3 my-3 border" style={{ display: "flex", flexWrap: "wrap" }} >
                 <div class="card m-2">
-                    <img src='./Categorias/CuerpoIntermedio.jpg' className='Ejercicios' />
+                    <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Pecho</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/CuerpoIntermedio.jpg' className='Ejercicios' />
+                    <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Espalda</button>
                 </div>
                 <div class="card m-2">
@@ -35,11 +35,11 @@ const CategoriaPrincipiante = () => {
                     <button type="button" class="btn btn-info btn-block mt-4">Pierna</button>
                 </div>
                 <div class="card m-2">
-                    <img src='CuerpoIntermedio.jpg' className='Ejercicios' />
+                    <img src='./Categorias/AbdominalPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Abdominal</button>
                 </div>
                 <div class="card m-2">
-                    <img src='CuerpoIntermedio.jpg' className='Ejercicios' />
+                    <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Hombro</button>
                 </div>
             </div>
