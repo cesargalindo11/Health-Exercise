@@ -18,13 +18,7 @@ const Niveles = () => {
   return (
     <div>
 
-      <div class="container BotonesNivel p-3 my-3 border" >
-        <button
-          //onClick={CerrarSesion}
-          className='barra btn btn-danger '>
-          Cerrar Sesion
-        </button>
-      </div>
+      
       <div class="container p-3 my-3 border">
 
         <h1 style={{ color: 'white' }}>
@@ -62,7 +56,13 @@ export default Niveles;
               Cerrar sesion
               </button> )
           : ( <span></span> )
-      }
+      }<div class="container BotonesNivel p-3 my-3 border" >
+        <button
+          //onClick={CerrarSesion}
+          className='barra btn btn-danger '>
+          Cerrar Sesion
+        </button>
+      </div>
       <button
               //onClick={CerrarSesion}
               className='barra btn btn-danger '>
