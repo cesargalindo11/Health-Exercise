@@ -36,8 +36,8 @@ function App() {
 
           <Switch>
             <Route exact path='/' component={Inicio}></Route>
-            <Route path='/registro' component={Registro}></Route>
-            <Route path='/login' component={Login}></Route>
+            <Route exact path='/registro' component={Registro}></Route>
+            <Route exact path='/login' component={Login}></Route>
             
           </Switch>
 
