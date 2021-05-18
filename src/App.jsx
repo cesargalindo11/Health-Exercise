@@ -44,10 +44,10 @@ function App() {
         </Router>
 
       <ToastContainer />
-      <Niveles></Niveles>
+      {/* <Niveles></Niveles>
       <CategoriaPrincipiante></CategoriaPrincipiante>
       <CategoriaIntermedio></CategoriaIntermedio>
-      <CategoriaAvanzado></CategoriaAvanzado>
+      <CategoriaAvanzado></CategoriaAvanzado> */}
 
       </div>
   );

@@ -17,8 +17,6 @@ const Login = () => {
 
 
 
-
-
   const LoginUsuario = (e) => {
     e.preventDefault()
     store.collection("registro").doc(email).get()
@@ -53,7 +51,7 @@ const Login = () => {
 //console.log(usuarioGet);
   return (
     <>
-        <Niveles valores="cesar@gmail.com"></Niveles>
+        {/* <Niveles valores="cesar@gmail.com"></Niveles> */}
       <div className=' row mt-15'>
 
         <div className='col'></div>
