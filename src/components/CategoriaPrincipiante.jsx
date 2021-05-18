@@ -10,7 +10,7 @@ const CategoriaPrincipiante = () => {
                 
             </div>
             <div className="Categoria" class="container">
-                <h1 style={{ color: 'white' }}>
+                <h1 style={{ color: 'black' }}>
                     Categoria Principiante
                 </h1>
             </div>

@@ -10,7 +10,7 @@ const CategoriaAvanzado = () => {
                
             </div>
             <div className="Categoria" class="container">
-                <h1 style={{ color: 'white'}}>
+                <h1 style={{ color: 'black'}}>
                     Categoria Avanzado
                 </h1>
             </div>

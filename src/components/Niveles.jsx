@@ -4,16 +4,16 @@ import { Link, useHistory } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 
 const Niveles = () => {
-  const historial = useHistory()
-  const [usuario, setUsuario] = useState(null)
+  // const historial = useHistory()
+  // const [usuario, setUsuario] = useState(null)
 
-  const CerrarSesion = () => {
+  // const CerrarSesion = () => {
 
-   // store.signOut()
-    setUsuario(null)
-    historial.push('/')
+  //  // store.signOut()
+  //   setUsuario(null)
+  //   historial.push('/')
 
-  }
+  // }
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Niveles = () => {
       
       <div class="container">
 
-        <h1 style={{ color: 'white' }}>
+        <h1 style={{ color: 'black' }}>
           Niveles
         </h1>
        
