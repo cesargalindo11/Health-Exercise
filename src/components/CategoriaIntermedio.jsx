@@ -6,18 +6,15 @@ import { auth } from '../firebaseConfig';
 const CategoriaIntermedio = () => {
     return (
         <div>
-            <div class="container BotonesNivel p-3 my-3 border" >
-                <button
-                    className='barra btn btn-danger '>
-                    Atras
-                </button>
+            <div class="container BotonesNivel" >
+                
             </div>
-            <div className="Categoria" class="container p-3 my-3 border">
+            <div className="Categoria" class="container">
                 <h1 style={{ color: 'white' }}>
                     Categoria Intermedio
                 </h1>
             </div>
-            <div class="container p-3 my-3 border" style={{ display: "flex", flexWrap: "wrap" }}>
+            <div class="container" style={{ display: "flex", flexWrap: "wrap" }}>
                 <div class="card m-2">
                     <img src='./Categorias/PechoIntermedio.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Pecho</button>
