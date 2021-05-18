@@ -19,22 +19,22 @@ const Niveles = () => {
     <div>
 
       
-      <div class="container p-3 my-3 border">
+      <div class="container">
 
         <h1 style={{ color: 'white' }}>
           Niveles
         </h1>
        
         <div className='Niveles'>
-          <div class="container p-3 my-3 border">
+          <div class="container ">
             <img src='./NivelesImagenes/CuerpoPrincipiante.jpg' className='CuerpoPrincipiante' />
             <button type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
           </div>
-          <div class="container p-3 my-3 border">
+          <div class="container">
             <img src='./NivelesImagenes/CuerpoIntermedio.jpg' className='CuerpoPrincipiante'></img>
             <button type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button>
           </div>
-          <div class="container p-3 my-3 border">
+          <div class="container">
             <img src='./NivelesImagenes/CuerpoAvanzado.jpg' className='CuerpoPrincipiante'></img>
             <button type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button>
           </div>
