@@ -203,12 +203,8 @@ const Registro = () => {
               value={values.Peso}
               name="Peso"
               required
-<<<<<<< HEAD
               />
               <label className="label text-white">Kg</label>
-=======
-            />
->>>>>>> e69a0441d7778b4e9f824aaa98ce235b2b985d2a
           </div>
 
           <div className="form-check form-check-inline mb-3">
