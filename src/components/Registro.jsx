@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/App.css';
-import { store, auth } from '../firebaseConfig';
+import { store} from '../firebaseConfig';
 import { toast } from "react-toastify";
 
 
@@ -9,8 +9,7 @@ const Registro = () => {
 
 
   const [currentId, setCurrentId] = useState("");
-  const [correo, setCorreo] = useState("");
-  const [contra, setContra] = useState("");
+
   
 
 
@@ -25,45 +24,33 @@ const Registro = () => {
 
 
   const [values, setValues] = useState(initialStateValues);
-  const [sexo, setSexo] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    setCorreo(values.Email);
-    setContra(values.Password);
-    //LoginUsuario()
 
   };
 
   const registrarUsuario = async () => {
 
-    try {
+     store.collection("registro").doc(values.Email).get()
 
-      await store.collection("registro").doc().set(values);
-      toast("Te Registraste con Exito", {
-        type: "success",
+      .then(function(snapshot) {
+          if(snapshot.exists){
+            return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
+          } else{
+            store.collection("registro").doc(values.Email).set(values);
+            toast("Te Registraste con Exito", {
+              type: "success",
+      
+            });
+          } // true
+          
 
-      });
+  });
+ }
 
-    } catch (error) {
-      console.error(error);
-    }
-    
-  };
 
- const LoginUsuario = () => {
-
-  if(values.Email!='' && values.Password!=''){
-    auth.createUserWithEmailAndPassword(correo, contra)
-      .then((userCredential) => console.log('Usuario Registrado'))
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;       
-
-      });
-    }
-  }
 
   const validNomAp = (str) => {
 
@@ -74,9 +61,13 @@ const Registro = () => {
 
   const validEdad = (str) => {
 
-    let pattern = /([1-5][1-9])/;
-
-    return !!pattern.test(str);
+    let num = parseInt(str)
+    if(num>10 && num<60){
+        return true;
+    }else{
+      return false;
+    }
+  
 
   };
 
@@ -125,32 +116,17 @@ const Registro = () => {
       if (!validPass(values.Password)) {
         return toast("Contrasena no Valida", { type: "warning", autoClose: 1000 });
       }
-      //console.log(ban)
-     // if(ban==true){
-        
+
         registrarUsuario(values);
         setValues({ ...initialStateValues });
-      
-     // }else{      
-       //  return toast("Registro incorrecto. correo ya existe", { type: "warning", autoClose: 1000 });
-      //}
-      
-      //registrarUsuario(values);
-      //setValues({ ...initialStateValues });
- 
-
-  };
-
-  const getLinkById = async (id) => {
-    const doc = await store.collection("registro").doc(id).get();
-    setValues({ ...doc.data() });
+    
   };
 
   useEffect(() => {
     if (currentId === "") {
       setValues({ ...initialStateValues });
     } else {
-      getLinkById(currentId);
+      //getLinkById(currentId);
     }
 
   }, [currentId]);
@@ -179,7 +155,6 @@ const Registro = () => {
               value={values.Nombres}
               name="Nombres"
               required
-              //pattern="[A-Za-z]{3,30}"
               title="Letras. Tamaño mínimo: 3. Tamaño máximo: 30"
 
             />
@@ -197,7 +172,6 @@ const Registro = () => {
               value={values.Apellidos}
               name="Apellidos"
               required
-              //pattern="[A-Za-z]{3,30}"
               title="Letras. Tamaño mínimo: 3. Tamaño máximo: 30"
             />
           </div>
@@ -209,13 +183,11 @@ const Registro = () => {
             </div>
             <input
               className='form-control'
-              placeholder='Introduce tu Edad'
+              placeholder=''
               type="number"
               onChange={handleInputChange}
               value={values.Edad}
               name="Edad"
-              //minLength="10"
-              //maxLength="60"
               required
 
             />
@@ -225,13 +197,11 @@ const Registro = () => {
             </div>
             <input
               className='form-control'
-              placeholder='Introduce tu Peso'
+              placeholder=''
               type="number"
               onChange={handleInputChange}
               value={values.Peso}
               name="Peso"
-              //minLength="40"
-              //maxLength="150"
               required
 <<<<<<< HEAD
               />
@@ -294,9 +264,6 @@ const Registro = () => {
               onChange={handleInputChange}
               value={values.Password}
               name="Password"
-              //minlength="5"
-              //maxLength="30" 
-              //pattern="[A-Za-z0-9]+"
               title="ingrese de 5 a 30 caracteres alfanumericos"
               required
             />
