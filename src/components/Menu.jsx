@@ -22,13 +22,13 @@ const Menu = () => {
 
   },[])
 
-  const CerrarSesion = () => {
+  // const CerrarSesion = () => {
 
-    auth.signOut()
-    setUsuario(null)
-    historial.push('/')
+  //   auth.signOut()
+  //   setUsuario(null)
+  //   historial.push('/')
 
-  }
+  // }
 
 
   return (
@@ -50,21 +50,21 @@ const Menu = () => {
               !usuario
               ?<Link className='nav-link' to='/login'>Sesion</Link>
               :(<span></span>)
-            }
-              </li>
+              }
+            </li>
            
             <li className='nav-item'>
               {
               !usuario
               ?<Link className='nav-link' to='/registro'>Registro</Link>
                 :(<span></span>)
-            }
-              </li>
+              }
+            </li>
             
           </div>
 
         </ul>
-        {
+        {/* {
           usuario
           ? ( <button 
               onClick={CerrarSesion}
@@ -72,7 +72,7 @@ const Menu = () => {
               Cerrar sesion
               </button> )
           : ( <span></span> )
-        }
+        } */}
 
 
       </nav>

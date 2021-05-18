@@ -2,7 +2,7 @@ import React from 'react';
 import Registro from './components/Registro'
 import Login from './components/Login'
 import Inicio from './components/Inicio'
-//import Niveles from './components/Niveles'
+// import Niveles from './components/Niveles'
 import Menu from './components/Menu'
 import './assets/css/App.css'
 import './firebaseConfig'
@@ -38,12 +38,16 @@ function App() {
             <Route exact path='/' component={Inicio}></Route>
             <Route exact path='/registro' component={Registro}></Route>
             <Route exact path='/login' component={Login}></Route>
+            <Route exact path='/niveles' component={Niveles}></Route>
+            <Route exact path='/categoriaprincipiante' component={CategoriaPrincipiante}></Route>
+            <Route exact path='/categoriaintermedio' component={CategoriaIntermedio}></Route>
+            <Route exact path='/categoriaavanzado' component={CategoriaAvanzado}></Route>
             
           </Switch>
 
         </Router>
 
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       {/* <Niveles></Niveles>
       <CategoriaPrincipiante></CategoriaPrincipiante>
       <CategoriaIntermedio></CategoriaIntermedio>
