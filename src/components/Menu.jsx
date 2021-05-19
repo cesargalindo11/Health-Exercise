@@ -1,7 +1,7 @@
 import React ,{ useEffect, useState } from 'react';
 import { Link,useHistory} from 'react-router-dom'
 import './Login'
-import { auth } from '../firebaseConfig';
+import { auth, store } from '../firebaseConfig';
 import '../assets/css/App.css';
 
 const Menu = () => {
@@ -9,8 +9,8 @@ const Menu = () => {
 
   const historial = useHistory()
   const [usuario, setUsuario] = useState(null)
-  useEffect( () => {
 
+  useEffect( () => {
     auth.onAuthStateChanged( (user) => {
 
       if( user ){
@@ -22,13 +22,13 @@ const Menu = () => {
 
   },[])
 
-  // const CerrarSesion = () => {
+  const CerrarSesion = () => {
 
-  //   auth.signOut()
-  //   setUsuario(null)
-  //   historial.push('/')
+    auth.signOut()
+    setUsuario(null)
+    historial.push('/')
 
-  // }
+  }
 
 
   return (
@@ -64,7 +64,8 @@ const Menu = () => {
           </div>
 
         </ul>
-        {/* {
+
+        {
           usuario
           ? ( <button 
               onClick={CerrarSesion}
@@ -72,7 +73,7 @@ const Menu = () => {
               Cerrar sesion
               </button> )
           : ( <span></span> )
-        } */}
+        }
 
 
       </nav>

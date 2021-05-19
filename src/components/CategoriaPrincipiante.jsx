@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/App.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
-
+import Modal from 'react-modal'
 const CategoriaPrincipiante = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalEspalda, setModalEspalda] = useState(false);
+    
     return (
         <div>
             <div class="container BotonesNivel" >
@@ -17,13 +20,30 @@ const CategoriaPrincipiante = () => {
             <div class="container" style={{ display: "flex", flexWrap: "wrap" }} >
                 <div class="card m-2">
                     <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Pecho</button>
+                    <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4">Pecho</button>
                 </div>
-                <div class="card m-2">
+                <Modal isOpen={modalIsOpen}>
+                    <h2>Malditos hijos de perre los odio</h2>
+                    <div>
+                        <button onClick={() => setModalIsOpen(false)}>Categorias</button>
+                    </div>
+                </Modal>
+
+                {/* <div class="card m-2">
                     <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Espalda</button>
+                    <button onClick={() => setModalEspalda(true)} type="button" class="btn btn-info btn-block mt-4">Espalda</button>
                 </div>
-                <div class="card m-2">
+                <Modal isOpen={modalEspalda}>
+                    <h2>Malditos hijos de perra los odio</h2>
+                    <div>
+                        <button onClick={() => setModalEspalda(false)}>Categorias</button>
+                    </div>
+                    <div>
+                        <button onClick={() => setModalIsOpen(true)}>Espalda</button>
+                    </div>
+                </Modal> */}
+
+                {/* <div class="card m-2">
                     <img src='./Categorias/BrazoPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Brazo</button>
                 </div>
@@ -38,7 +58,7 @@ const CategoriaPrincipiante = () => {
                 <div class="card m-2">
                     <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">Hombro</button>
-                </div>
+                </div> */}
             </div>
         </div>
     )
