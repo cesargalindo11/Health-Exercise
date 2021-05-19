@@ -16,7 +16,6 @@ const Niveles = (props) => {
 
   const { history } = props;
 
-
   return (
     <div>
 
