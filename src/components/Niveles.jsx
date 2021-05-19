@@ -16,7 +16,6 @@ const Niveles = (props) => {
 
   const { history } = props;
 
-
   return (
     <div>
 
@@ -29,7 +28,7 @@ const Niveles = (props) => {
           </h1>
         
           <div className='Niveles'>
-            <div class="container ">
+            <div class="container">
               <img src='./NivelesImagenes/CuerpoPrincipiante.jpg' className='CuerpoPrincipiante' />
               <button onClick={() => history.push('/categoriaprincipiante')} type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
             </div>
