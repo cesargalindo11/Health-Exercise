@@ -28,17 +28,17 @@ const Niveles = (props) => {
           </h1>
         
           <div className='Niveles'>
-            <div class="container ">
+            <div class="container">
               <img src='./NivelesImagenes/CuerpoPrincipiante.jpg' className='CuerpoPrincipiante' />
               <button onClick={() => history.push('/categoriaprincipiante')} type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
             </div>
             <div class="container">
               <img src='./NivelesImagenes/CuerpoIntermedio.jpg' className='CuerpoPrincipiante'></img>
-              {/* <button onClick={() => history.push('/categoriaintermedio')} type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button> */}
+              <button onClick={() => history.push('/categoriaintermedio')} type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button>
             </div>
             <div class="container">
               <img src='./NivelesImagenes/CuerpoAvanzado.jpg' className='CuerpoPrincipiante'></img>
-              {/* <button onClick={() => history.push('/categoriaavanzado')} type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button> */}
+              <button onClick={() => history.push('/categoriaavanzado')} type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button>
             </div>
           </div>
         </React.Fragment>
