@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/App.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 
-const Niveles = () => {
+const Niveles = (props) => {
   // const historial = useHistory()
   // const [usuario, setUsuario] = useState(null)
 
@@ -14,6 +14,8 @@ const Niveles = () => {
   //   historial.push('/')
 
   // }
+
+  const { history } = props;
 
   return (
     <div>
@@ -28,15 +30,15 @@ const Niveles = () => {
         <div className='Niveles'>
           <div class="container ">
             <img src='./NivelesImagenes/CuerpoPrincipiante.jpg' className='CuerpoPrincipiante' />
-            <button type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
+            <button onClick={() => history.push('/categoriaprincipiante')} type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
           </div>
           <div class="container">
             <img src='./NivelesImagenes/CuerpoIntermedio.jpg' className='CuerpoPrincipiante'></img>
-            <button type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button>
+            <button onClick={() => history.push('/categoriaintermedio')} type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button>
           </div>
           <div class="container">
             <img src='./NivelesImagenes/CuerpoAvanzado.jpg' className='CuerpoPrincipiante'></img>
-            <button type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button>
+            <button onClick={() => history.push('/categoriaavanzado')} type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button>
           </div>
         </div>
       </div>
@@ -44,7 +46,7 @@ const Niveles = () => {
   )
 }
 
-export default Niveles;
+export default withRouter(Niveles);
 /*
 <h1>Niveles</h1>
       {
