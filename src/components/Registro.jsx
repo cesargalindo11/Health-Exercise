@@ -242,7 +242,7 @@ const Registro = () => {
             <input
               className='form-control'
               placeholder='Introduce tu correo electronico'
-              type="email"
+              type="text"
               onChange={handleInputChange}
               value={values.Email}
               name="Email" 
