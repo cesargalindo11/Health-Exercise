@@ -3,17 +3,18 @@ import '../assets/css/App.css';
 import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 const Niveles = (props) => {
-  // const historial = useHistory()
-  // const [usuario, setUsuario] = useState(null)
+  const{correo}=props
+  const historial = useHistory()
+   const [usuario, setUsuario] = useState(correo)
 
-  // const CerrarSesion = () => {
+   /*const CerrarSesion = () => {
 
-  //  // store.signOut()
-  //   setUsuario(null)
-  //   historial.push('/')
+  //store.signOut()
+    setUsuario(null)
+    historial.push('/')
 
-  // }
-
+  }*/
+//const usuario="cesar@gmail.com"
   const { history } = props;
 
   return (
@@ -25,7 +26,7 @@ const Niveles = (props) => {
         <React.Fragment>
           <h1 style={{ color: 'black' }}>
             Niveles
-          </h1>
+          </h1> 
         
           <div className='Niveles'>
             <div class="container">
@@ -43,14 +44,15 @@ const Niveles = (props) => {
           </div>
         </React.Fragment>
       </div>
+
+      
+
     </div>
   )
 }
 
 export default withRouter(Niveles);
-/*
-<h1>Niveles</h1>
-      {
+/**{
 
           usuario
           ? ( <button 
@@ -77,4 +79,4 @@ export default withRouter(Niveles);
           //onClick={CerrarSesion}
           className='barra btn btn-danger '>
           Perfil
-        </button>*/
+        </button> */

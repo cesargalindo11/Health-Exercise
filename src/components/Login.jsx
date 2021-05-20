@@ -13,7 +13,7 @@ const Login = () => {
   const historial = useHistory()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
-  const usuarioGet =[];
+  const usuarioGet =[]; 
 
 
 
@@ -31,7 +31,7 @@ const Login = () => {
              
               usuarioGet.push(correo);
             
-            historial.push("/niveles")
+            historial.push("/niveles",{correo})
           } else {
 
             return toast(" Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });

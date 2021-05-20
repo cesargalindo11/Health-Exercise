@@ -36,7 +36,7 @@ const Menu = () => {
 
 
 
-      <nav className='.barra-content'>
+      <nav className='.barra-content color'>
 
         <ul className='barra '>
 
