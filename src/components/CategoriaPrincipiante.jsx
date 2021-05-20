@@ -27,25 +27,27 @@ const CategoriaPrincipiante = () => {
               
                 <Modal
                     isOpen={modalIsOpen}
+                    
                     style={
                         {
                             overlay: {
-                                backgroundColor: '#4ECDC4'
+                                backgroundColor: '#292F36'
                             },
                             content: {
                                 backgroundColor: '#292f36',
                                 backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
                                 position: 'absolute',
-                                top: '0px',
-                                left: '0px',
-                                right: '0px',
-                                bottom: '0px',
+                                top: '20px',
+                                left: '20px',
+                                right: '20px',
+                                bottom: '20px',
                             }
                         }
                     }
                 >
-
+                        
                     <div>
+                    <h1>Categoria Pecho</h1>
                         <Video link={url} />
                     </div>
                     <div>
