@@ -19,7 +19,7 @@ const CategoriaPrincipiante = () => {
                     Categoria Principiante
                 </h1>
             </div>
-            <div class="container" style={{ display: "flex", flexWrap: "wrap" }} >
+            <div class="container backgroud-card" style={{ display: "flex", flexWrap: "wrap" }} >
                 <div class="card m-2">
                     <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
                     <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4">Pecho</button>

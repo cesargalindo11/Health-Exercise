@@ -101,3 +101,7 @@ h1{
 .color{
     background-color: black;
 }
+.backgroud-card{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}

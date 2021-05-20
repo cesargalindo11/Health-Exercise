@@ -97,7 +97,7 @@ class Video extends Component {
           </div>
           <div class="col">
             <div className="tiempo">            {
-              playing ? <Timer2/>:'Pause'
+              playing ? <Timer2/>:''
               
             }
           </div>

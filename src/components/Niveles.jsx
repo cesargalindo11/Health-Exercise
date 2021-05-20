@@ -21,12 +21,13 @@ const Niveles = (props) => {
     <div>
 
       
-      <div class="container">
-
-        <React.Fragment>
-          <h1 style={{ color: 'black' }}>
+      <div class="container ">
+      <h1 style={{ color: 'black' }}>
             Niveles
           </h1> 
+          <div class="backgroud-card"  >
+        <React.Fragment>
+       
         
           <div className='Niveles'>
             <div class="container">
@@ -45,7 +46,7 @@ const Niveles = (props) => {
         </React.Fragment>
       </div>
 
-      
+      </div>      
 
     </div>
   )
