@@ -11,20 +11,33 @@ const Menu = () => {
   const [usuario, setUsuario] = useState(null)
 
   useEffect( () => {
+
+    store.collection("registro").doc('cesar@gmail.com').get()
+
+      .then(function (snapshot) {
+        if (snapshot.exists) {         
+
+            var correo = snapshot.get("Email");
+             
+             setUsuario(correo)
+          
+        }
+      });
+    /*
     auth.onAuthStateChanged( (user) => {
 
       if( user ){
-        setUsuario(user.email)
+        setUsuario('cesar@gmail.com')
         console.log(user.email);
       }
 
-    })
+    })*/
 
   },[])
 
   const CerrarSesion = () => {
 
-    auth.signOut()
+    //store.signOut()
     setUsuario(null)
     historial.push('/')
 
@@ -64,7 +77,7 @@ const Menu = () => {
           </div>
 
         </ul>
-
+        
         {
           usuario
           ? ( <button 

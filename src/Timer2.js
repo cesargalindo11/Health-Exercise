@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 const Timer2 = () => {
     //const {initialMinute = 0,initialSeconds = 10} = props;
     const [ minutes, setMinutes ] = useState(0);
-    const [seconds, setSeconds ] =  useState(0);
+    const [seconds, setSeconds ] =  useState(45);
     const [contador, setContador ] =  useState(1);
     
     useEffect(()=>{
@@ -18,12 +18,12 @@ const Timer2 = () => {
                 if(contador===1){
                     clearInterval(myInterval)
                     setMinutes('0');
-                    setSeconds('5');
+                    setSeconds('10');
                 }else{
                     if(contador===2)
                         clearInterval(myInterval)
                         setMinutes('0');
-                        setSeconds('10');
+                        setSeconds('45');
 
                 }
                    
