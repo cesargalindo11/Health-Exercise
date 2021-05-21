@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../assets/css/App.css';
 import { Link, useHistory } from 'react-router-dom'
 import { toast } from "react-toastify";
-import { store } from '../firebaseConfig';
+import { auth,store } from '../firebaseConfig';
 import Niveles from '../components/Niveles'
 
 
@@ -13,10 +13,38 @@ const Login = () => {
   const historial = useHistory()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  const [error, setError]=useState('');
   const usuarioGet =[]; 
 
 
 
+  const LoginUsuario = React.useCallback(async(e) => {
+    e.preventDefault()
+
+    if(email!=''){
+      try {
+        await auth.signInWithEmailAndPassword(email, pass)  
+        setEmail('')
+        setPass('')
+        setError(null)
+        historial.push('/niveles') 
+    } catch (error) {
+        if(error.code === 'auth/user-not-found'){
+          return toast(" Correo  Incrorrecto", { type: "warning", autoClose: 1000 });
+        }
+        if(error.code === 'auth/wrong-password'){
+          return toast("Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
+        }
+        console.log(error.code)
+        console.log(error.message)
+    }
+    }else{
+      return toast("campos obligatorios", { type: "warning", autoClose: 2000 });
+    }
+
+}, [email, pass, historial])
+
+  /*
   const LoginUsuario = (e) => {
     e.preventDefault()
     if(email!='' && pass!=''){
@@ -51,7 +79,7 @@ const Login = () => {
       return toast("campos obligatorios", { type: "warning", autoClose: 2000 });
     }
   
-  }
+  }*/
 
 //console.log(usuarioGet);
   return (
@@ -74,7 +102,7 @@ const Login = () => {
                 placeholder='Introduce tu correo electronico'
                 type="email"
                 name="correo"
-                required
+                
                 onChange={(e) => { setEmail(e.target.value) }}
                 
               />
@@ -89,7 +117,7 @@ const Login = () => {
                 placeholder='Introduce una contraseña'
                 type="password"
                 name="password"
-                required
+                
                 onChange={(e) => { setPass(e.target.value) }}
                 
               />

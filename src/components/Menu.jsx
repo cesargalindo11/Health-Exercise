@@ -1,5 +1,5 @@
-import React ,{ useEffect, useState } from 'react';
-import { Link,useHistory} from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom'
 import './Login'
 import { auth, store } from '../firebaseConfig';
 import '../assets/css/App.css';
@@ -10,19 +10,19 @@ const Menu = () => {
   const historial = useHistory()
   const [usuario, setUsuario] = useState(null)
 
-  useEffect( () => {
+  useEffect(() => {
 
-    
-    auth.onAuthStateChanged( (user) => {
 
-      if( user ){
+    auth.onAuthStateChanged((user) => {
+
+      if (user) {
         setUsuario(user.email)
         console.log(user.email);
       }
 
     })
 
-  },[])
+  }, [])
 
   const CerrarSesion = () => {
 
@@ -46,36 +46,39 @@ const Menu = () => {
             <a href="/#"><img src="logo.png" alt="logo" /> </a>
           </div>
           <div className="botones nav">
-            
+
             <li className='nav-item'>
               {
-              !usuario
-              ?<Link className='nav-link' to='/login'>Sesion</Link>
-              :(<span></span>)
+                !usuario
+                  ? <Link className='nav-link' to='/login'>Sesion</Link>
+                  : (<span></span>)
               }
             </li>
-           
+
             <li className='nav-item'>
               {
-              !usuario
-              ?<Link className='nav-link' to='/registro'>Registro</Link>
-                :(<span></span>)
+                !usuario
+                  ? <Link className='nav-link' to='/registro'>Registro</Link>
+                  : (<span></span>)
               }
             </li>
-            
+            <li className='nav-item' >
+
+              {
+                usuario
+                  ? (<button
+                    onClick={CerrarSesion}
+                    className='barra btn btn-danger '>
+                    Cerrar sesion
+                  </button>)
+                  : (<span></span>)
+              }
+            </li>
+
           </div>
 
         </ul>
-        
-        {
-          usuario
-          ? ( <button 
-              onClick={CerrarSesion}
-              className='barra btn btn-danger '>
-              Cerrar sesion
-              </button> )
-          : ( <span></span> )
-        }
+
 
 
       </nav>
