@@ -4,10 +4,12 @@ import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 import Modal from 'react-modal'
 import Video from '../Video'
-const CategoriaPrincipiante = () => {
+const CategoriaPrincipiante = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalEspalda, setModalEspalda] = useState(false);
     const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/fitnes.mp4?alt=media&token=83e7c600-5031-48f4-9687-5444a8d00a5f';
+    
+    const { history } = props;
  
     return (
         <div>
@@ -85,8 +87,11 @@ const CategoriaPrincipiante = () => {
                     <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
+                <div>
+                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Atras</button>
+                </div>
             </div>
         </div>
     )
 }
-export default CategoriaPrincipiante;
+export default withRouter(CategoriaPrincipiante);
