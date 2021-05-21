@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/App.css';
-import { Link, useHistory, withRouter } from 'react-router-dom';
+import { Link, useHistory, useLocation, useParams, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 const Niveles = (props) => {
+
+  //let location=useLocation();
+  //console.log(location);
+  let {search}=useLocation();
+  let query=new URLSearchParams(search);
+  console.log(query);
+
+  let start = query.get("correo");
+  console.log(start);
+
+  //let params =useParams();
+  //console.log(params);
   const{correo}=props
   const historial = useHistory()
    const [usuario, setUsuario] = useState(correo)

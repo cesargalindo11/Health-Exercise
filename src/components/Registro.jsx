@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/App.css';
-import { store} from '../firebaseConfig';
+import { auth,store} from '../firebaseConfig';
 import { toast } from "react-toastify";
 
 
@@ -32,18 +32,20 @@ const Registro = () => {
   };
 
   const registrarUsuario = async () => {
-
+     const res= await  auth.createUserWithEmailAndPassword(values.Email, values.Password)
      store.collection("registro").doc(values.Email).get()
 
       .then(function(snapshot) {
           if(snapshot.exists){
             return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
           } else{
-            store.collection("registro").doc(values.Email).set(values);
+            
+            store.collection("registro").doc(res.user.uid).set(values);
             toast("Te Registraste con Exito", {
               type: "success",
-      
+              
             });
+
           } // true
           
 

@@ -86,7 +86,7 @@ img {
 h1{
     text-align: center;
     color: #FF6B6B;
-    
+    font-size: 24px;
 }
 
 .BotonesNivel {
@@ -104,4 +104,8 @@ h1{
 .backgroud-card{
     background-color: rgba(0, 0, 0, 0.5);
 
+}
+h2{
+    font-size: 24px;
+    text-align: center;
 }

@@ -47,11 +47,8 @@ function App() {
 
         </Router>
 
-      {/* <ToastContainer /> */}
-      {/* <Niveles></Niveles>
-      <CategoriaPrincipiante></CategoriaPrincipiante>
-      <CategoriaIntermedio></CategoriaIntermedio>
-      <CategoriaAvanzado></CategoriaAvanzado> */}
+      { <ToastContainer /> }
+ 
 
       </div>
   );

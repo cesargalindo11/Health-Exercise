@@ -12,32 +12,21 @@ const Menu = () => {
 
   useEffect( () => {
 
-    store.collection("registro").doc('cesar@gmail.com').get()
-
-      .then(function (snapshot) {
-        if (snapshot.exists) {         
-
-            var correo = snapshot.get("Email");
-             
-             setUsuario(correo)
-          
-        }
-      });
-    /*
+    
     auth.onAuthStateChanged( (user) => {
 
       if( user ){
-        setUsuario('cesar@gmail.com')
+        setUsuario(user.email)
         console.log(user.email);
       }
 
-    })*/
+    })
 
   },[])
 
   const CerrarSesion = () => {
 
-    //store.signOut()
+    auth.signOut()
     setUsuario(null)
     historial.push('/')
 
@@ -95,4 +84,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Menu;

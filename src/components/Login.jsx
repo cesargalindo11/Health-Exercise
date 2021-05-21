@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../assets/css/App.css';
 import { Link, useHistory } from 'react-router-dom'
-import { store } from '../firebaseConfig';
 import { toast } from "react-toastify";
+import { store } from '../firebaseConfig';
 import Niveles from '../components/Niveles'
 
 
@@ -19,7 +19,8 @@ const Login = () => {
 
   const LoginUsuario = (e) => {
     e.preventDefault()
-    store.collection("registro").doc(email).get()
+    if(email!='' && pass!=''){
+      store.collection("registro").doc(email).get()
 
       .then(function (snapshot) {
         if (snapshot.exists) {
@@ -31,7 +32,7 @@ const Login = () => {
              
               usuarioGet.push(correo);
             
-            historial.push("/niveles",{correo})
+            historial.push('/Niveles')
           } else {
 
             return toast(" Contraseña Incrorrecta", { type: "warning", autoClose: 1000 });
@@ -40,12 +41,16 @@ const Login = () => {
 
         } else {
 
-          return toast("El correo no existe", { type: "warning", autoClose: 1000 });
+          return toast("El correo es incorrecto", { type: "warning", autoClose: 1000 });
 
         } // true
 
 
       });
+    }else{
+      return toast("campos obligatorios", { type: "warning", autoClose: 2000 });
+    }
+  
   }
 
 //console.log(usuarioGet);
@@ -69,7 +74,9 @@ const Login = () => {
                 placeholder='Introduce tu correo electronico'
                 type="email"
                 name="correo"
+                required
                 onChange={(e) => { setEmail(e.target.value) }}
+                
               />
             </div>
 
@@ -82,7 +89,9 @@ const Login = () => {
                 placeholder='Introduce una contraseña'
                 type="password"
                 name="password"
+                required
                 onChange={(e) => { setPass(e.target.value) }}
+                
               />
             </div>
 

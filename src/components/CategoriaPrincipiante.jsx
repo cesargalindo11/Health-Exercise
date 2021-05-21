@@ -15,14 +15,14 @@ const CategoriaPrincipiante = () => {
                 
             </div>
             <div className="Categoria" class="container">
-                <h1 style={{ color: 'black' }}>
+                <h2>
                     Categoria Principiante
-                </h1>
+                </h2>
             </div>
             <div class="container backgroud-card" style={{ display: "flex", flexWrap: "wrap" }} >
                 <div class="card m-2">
                     <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4">Pecho</button>
+                    <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
                 </div>
               
                 <Modal
@@ -47,17 +47,17 @@ const CategoriaPrincipiante = () => {
                 >
                         
                     <div>
-                    <h1>Categoria Pecho</h1>
+                    <h2>Categoria Pecho</h2>
                         <Video link={url} />
                     </div>
                     <div>
-                        <button onClick={() => setModalIsOpen(false)}  class="btn btn-info mt-4 tamano">Categorias</button>
+                        <button onClick={() => setModalIsOpen(false)}  class="btn btn-info mt-4 tamano">{<h2>Categoria</h2>}</button>
                     </div>
                 </Modal>
 
                  <div class="card m-2">
                     <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
-                    <button onClick={() => setModalEspalda(true)} type="button" class="btn btn-info btn-block mt-4">Espalda</button>
+                    <button onClick={() => setModalEspalda(true)} type="button" class="btn btn-info btn-block mt-4">{<h2>Espalda</h2>}</button>
                 </div>
                 <Modal isOpen={modalEspalda}>
                     <h2></h2>
@@ -71,19 +71,19 @@ const CategoriaPrincipiante = () => {
 
                 <div class="card m-2">
                     <img src='./Categorias/BrazoPrincipiante.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Brazo</button>
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
                 </div>
                 <div class="card m-2">
                     <img src='./Categorias/PiernaPrincipiante.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Pierna</button>
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
                 </div>
                 <div class="card m-2">
                     <img src='./Categorias/AbdominalPrincipiante.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Abdominal</button>
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
                 </div>
                 <div class="card m-2">
                     <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">Hombro</button>
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
             </div>
         </div>
