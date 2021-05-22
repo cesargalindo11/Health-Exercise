@@ -27,33 +27,28 @@ const Registro = () => {
 
   const [values, setValues] = useState(initialStateValues);
   const [error, setError]=useState('');
-  const[esta,setEsta]=useState('')
+  const[esta,setEsta]=useState(false)
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    registrar();
 
   };
 
-  const registrar= () => {
-
+  const registrar = () => {
     
-    //const res=await auth.createUserWithEmailAndPassword(values.Email, values.Password)
     store.collection("registro").where("Email", "==", values.Email)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            setEsta(doc.id)
+            setEsta(true)
             //console.log(doc.id, " => ", doc.data());
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
-        //return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
-        //setEsta(true)
-        
-        //return false;
     });
 
 
@@ -62,74 +57,32 @@ const Registro = () => {
       
 
   const registrarUsuario =async()=>{
-
     
-    console.log(esta);
-    const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+    if(esta===false){
+      const res=auth.createUserWithEmailAndPassword(values.Email, values.Password)
+     
+      store.collection("registro").doc((await res).user.uid).set(values);
+        if(auth.signOut()){
+      
+          toast("Te Registraste con Exito", {
+            type: "success",
+            autoClose: 1000 
+          });
+          historial.push('/login')
+          //window.location.replace('');
+          setTimeout(() => {
+            window.location.replace('');
+          }, 1000);
+        }
 
-    if(esta){
-      store.collection("registro").doc(res.user.uid).set(values);
-        toast("Te Registraste con Exito", {
-          type: "success",
-          
-        });
-        historial.push('/login')
-        setValues({ ...initialStateValues });
+       
+    }else{
+      setValues({ ...initialStateValues });
+      return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
+      
     }
     
   }
-
-/*
-
-   var user=auth.currentUser;
-   if(user != null){
-     user.providerData.forEach( function(profile){
-       console.log(profile.email);
-       if(profile.email===values.Email){
-        return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
-       }else{
-        const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
-        store.collection("registro").doc(res.user.uid).set(values);
-            toast("Te Registraste con Exito", {
-              type: "success",
-              
-            });
-            historial.push('/login')
-       }
-     })
-*/
-
-   
-
-        
-      
-   
-  
-    /*
-     const res= await  auth.createUserWithEmailAndPassword(values.Email, values.Password)
-     
-     store.collection("registro").doc(values.Email).get()
-
-      .then(function(snapshot) {
-          if(snapshot.exists){
-            return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
-          } else{
-            
-            store.collection("registro").doc(res.user.uid).set(values);
-            toast("Te Registraste con Exito", {
-              type: "success",
-              
-            });
-            historial.push('/login')
-
-          } // true
-          
-
-  });*/
- 
-
-
-
   const validNomAp = (str) => {
 
     let pattern = /^(?=.{3,30}$)[a-z]+(?:\s+[a-z]+)*$/i
@@ -194,20 +147,19 @@ const Registro = () => {
       if (!validPass(values.Password)) {
         return toast("Contrasena no Valida", { type: "warning", autoClose: 1000 });
       }
-        registrar();
+        
         registrarUsuario(values);
         //setValues({ ...initialStateValues });
     
   };
 
   useEffect(() => {
-    if (currentId === "") {
-      setValues({ ...initialStateValues });
-    } else {
-      //getLinkById(currentId);
-    }
 
-  }, [currentId]);
+
+      
+
+    //
+  }, []);
 
 
 
@@ -343,7 +295,7 @@ const Registro = () => {
             />
 
           </div>
-
+          
           <input
             className='btn btn-info btn-block mt-4'
             value='Registrar Usuario'
