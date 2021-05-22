@@ -19,14 +19,7 @@ const Niveles = (props) => {
   const historial = useHistory()
    const [usuario, setUsuario] = useState(correo)
 
-   /*const CerrarSesion = () => {
 
-  //store.signOut()
-    setUsuario(null)
-    historial.push('/')
-
-  }*/
-//const usuario="cesar@gmail.com"
   const { history } = props;
 
   return (

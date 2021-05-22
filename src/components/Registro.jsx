@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../assets/css/App.css';
 import { auth,store} from '../firebaseConfig';
 import { toast } from "react-toastify";
+import { Link, useHistory } from 'react-router-dom'
 
 
 
@@ -9,6 +10,7 @@ const Registro = () => {
 
 
   const [currentId, setCurrentId] = useState("");
+  const historial = useHistory()
 
   
 
@@ -33,7 +35,8 @@ const Registro = () => {
 
   const registrarUsuario = async () => {
      const res= await  auth.createUserWithEmailAndPassword(values.Email, values.Password)
-     store.collection("registro").doc(values.Email).get()
+     
+     store.collection("registro").doc(res.user.uid).get()
 
       .then(function(snapshot) {
           if(snapshot.exists){
@@ -45,6 +48,7 @@ const Registro = () => {
               type: "success",
               
             });
+            historial.push('/niveles')
 
           } // true
           
