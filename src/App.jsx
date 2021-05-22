@@ -22,6 +22,7 @@ import Niveles from "./components/Niveles"
 import CategoriaPrincipiante from "./components/CategoriaPrincipiante"
 import CategoriaIntermedio from "./components/CategoriaIntermedio"
 import CategoriaAvanzado from "./components/CategoriaAvanzado"
+import RutaPrivada from './components/RutaPrivada';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
             <Route exact path='/' component={Inicio}></Route>
             <Route exact path='/registro' component={Registro}></Route>
             <Route exact path='/login' component={Login}></Route>
-            <Route exact path='/niveles' component={Niveles}></Route>
+            <RutaPrivada exact path='/niveles' component={Niveles}></RutaPrivada>
             <Route exact path='/categoriaprincipiante' component={CategoriaPrincipiante}></Route>
             <Route exact path='/categoriaintermedio' component={CategoriaIntermedio}></Route>
             <Route exact path='/categoriaavanzado' component={CategoriaAvanzado}></Route>

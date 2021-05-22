@@ -27,7 +27,7 @@ const Login = () => {
         setEmail('')
         setPass('')
         setError(null)
-        historial.push('/niveles') 
+        // historial.push('/niveles')    
     } catch (error) {
         if(error.code === 'auth/user-not-found'){
           return toast(" Correo  Incrorrecto", { type: "warning", autoClose: 1000 });
@@ -127,7 +127,13 @@ const Login = () => {
               onClick={LoginUsuario}
               className="btn btn-info btn-block mt-4">
               Iniciar Sesion
-                   </button>
+            </button>
+
+            {/* <Link to='/niveles'
+              onClick={LoginUsuario}
+              className="btn btn-info btn-block mt-4">
+              Iniciar 
+            </Link> */}
 
           </form>
         </div>
