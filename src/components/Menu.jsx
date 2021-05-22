@@ -17,7 +17,7 @@ const Menu = () => {
 
       if (user) {
         setUsuario(user.email)
-        console.log(user.email);
+        
       }
 
     })
@@ -28,7 +28,7 @@ const Menu = () => {
 
     auth.signOut()
     setUsuario(null)
-    historial.push('/')
+    historial.push('/login')
 
   }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../assets/css/App.css';
 import { auth,store} from '../firebaseConfig';
 import { toast } from "react-toastify";
+import { Link, useHistory } from 'react-router-dom'
 
 
 
@@ -9,6 +10,7 @@ const Registro = () => {
 
 
   const [currentId, setCurrentId] = useState("");
+  const historial = useHistory()
 
   
 
@@ -24,6 +26,8 @@ const Registro = () => {
 
 
   const [values, setValues] = useState(initialStateValues);
+  const [error, setError]=useState('');
+  const[esta,setEsta]=useState('')
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,8 +35,79 @@ const Registro = () => {
 
   };
 
-  const registrarUsuario = async () => {
+  const registrar= () => {
+
+    
+    //const res=await auth.createUserWithEmailAndPassword(values.Email, values.Password)
+    store.collection("registro").where("Email", "==", values.Email)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            setEsta(doc.id)
+            //console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+        //return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
+        //setEsta(true)
+        
+        //return false;
+    });
+
+
+  }
+            
+      
+
+  const registrarUsuario =async()=>{
+
+    
+    console.log(esta);
+    const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+
+    if(esta){
+      store.collection("registro").doc(res.user.uid).set(values);
+        toast("Te Registraste con Exito", {
+          type: "success",
+          
+        });
+        historial.push('/login')
+        setValues({ ...initialStateValues });
+    }
+    
+  }
+
+/*
+
+   var user=auth.currentUser;
+   if(user != null){
+     user.providerData.forEach( function(profile){
+       console.log(profile.email);
+       if(profile.email===values.Email){
+        return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
+       }else{
+        const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+        store.collection("registro").doc(res.user.uid).set(values);
+            toast("Te Registraste con Exito", {
+              type: "success",
+              
+            });
+            historial.push('/login')
+       }
+     })
+*/
+
+   
+
+        
+      
+   
+  
+    /*
      const res= await  auth.createUserWithEmailAndPassword(values.Email, values.Password)
+     
      store.collection("registro").doc(values.Email).get()
 
       .then(function(snapshot) {
@@ -45,12 +120,13 @@ const Registro = () => {
               type: "success",
               
             });
+            historial.push('/login')
 
           } // true
           
 
-  });
- }
+  });*/
+ 
 
 
 
@@ -118,9 +194,9 @@ const Registro = () => {
       if (!validPass(values.Password)) {
         return toast("Contrasena no Valida", { type: "warning", autoClose: 1000 });
       }
-
+        registrar();
         registrarUsuario(values);
-        setValues({ ...initialStateValues });
+        //setValues({ ...initialStateValues });
     
   };
 
