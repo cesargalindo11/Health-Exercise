@@ -143,21 +143,6 @@ const Registro = () => {
   }
 
   const validPass = (str) => {
-<<<<<<< HEAD
-    // let pattern = /^[A-Za-z0-9]{5,30}$/;
-    // let pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{5,30}$/;
-    // let pattern = /^(?=[^AZ]*[AZ])(?=[^az]*[az])(?=[^0-9]*[0-9]).{5,30}$/; 
-    let letras = str.length 
-    if(letras > 4  && letras < 31 ){
-      return true;
-    }else{
-      return false;
-    }
-
-
-    // return !!pattern.test(str);
-  }
-=======
     if(str.length<6){
         return false;
     }else{
@@ -167,7 +152,6 @@ const Registro = () => {
 
     //return !!pattern.test(str);
   };
->>>>>>> da26f36e13c6533e50db134a96eaf0447b6b1673
 
   const handleSubmit = (e) => {
     e.preventDefault();

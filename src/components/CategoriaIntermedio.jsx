@@ -5,6 +5,7 @@ import { auth } from '../firebaseConfig';
 
 
 
+
 const CategoriaIntermedio = (props) => {
 
     const { history } = props;
