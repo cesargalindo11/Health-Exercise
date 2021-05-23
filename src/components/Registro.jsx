@@ -33,8 +33,8 @@ const Registro = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    registrar();
-
+    //registrar();
+    console.log(esta);
   };
 
   const registrar = () => {
@@ -57,11 +57,38 @@ const Registro = () => {
       
 
   const registrarUsuario =async()=>{
+
+
+
+
+    auth.createUserWithEmailAndPassword(values.Email, values.Password)
+  .then((userCredential) => {
+    // Signed in
+    if(auth.signOut()){
+      
+      toast("Te Registraste con Exito", {
+        type: "success",
+        autoClose: 1000 
+      });
+      historial.push('/login')
+      setTimeout(() => {
+        window.location.replace('');
+      }, 1000);
+    }
+    //var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    //setValues({ ...initialStateValues });
+    return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+  });
+    /*const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+     console.log(esta);
+    if(esta==false){
     
-    if(esta===false){
-      const res=auth.createUserWithEmailAndPassword(values.Email, values.Password)
-     
-      store.collection("registro").doc((await res).user.uid).set(values);
+        store.collection("registro").doc((await res).user.uid).set(values);
         if(auth.signOut()){
       
           toast("Te Registraste con Exito", {
@@ -69,7 +96,6 @@ const Registro = () => {
             autoClose: 1000 
           });
           historial.push('/login')
-          //window.location.replace('');
           setTimeout(() => {
             window.location.replace('');
           }, 1000);
@@ -80,7 +106,7 @@ const Registro = () => {
       setValues({ ...initialStateValues });
       return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
       
-    }
+    }*/
     
   }
   const validNomAp = (str) => {
@@ -115,9 +141,14 @@ const Registro = () => {
     return !!pattern.test(str);
   };
   const validPass = (str) => {
-    let pattern = /^[A-Za-z0-9]{5,30}/
+    if(str.length<6){
+        return false;
+    }else{
+      return true;
+    }
+    //let pattern = /^[A-Za-z0-9]{5,30}/
 
-    return !!pattern.test(str);
+    //return !!pattern.test(str);
   };
 
   const handleSubmit = (e) => {
@@ -156,7 +187,7 @@ const Registro = () => {
   useEffect(() => {
 
 
-      
+      //registrar(values)
 
     //
   }, []);
@@ -290,7 +321,8 @@ const Registro = () => {
               onChange={handleInputChange}
               value={values.Password}
               name="Password"
-              title="ingrese de 5 a 30 caracteres alfanumericos"
+              title="ingrese de 5 a 30 caracteres"
+              maxLength='30'
               required
             />
 
