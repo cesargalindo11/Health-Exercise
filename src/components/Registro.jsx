@@ -162,7 +162,9 @@ const Registro = () => {
     return !!pattern.test(str);
   };
   const validPass = (str) => {
-    let pattern = /^[A-Za-z0-9]{5,30}/
+    let pattern = /^[A-Za-z0-9]{5,30}$/;
+    // let pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    // let pattern = /^(?=[^AZ]*[AZ])(?=[^az]*[az])(?=[^0-9]*[0-9]).{6,30}$/; 
 
     return !!pattern.test(str);
   };
