@@ -27,33 +27,28 @@ const Registro = () => {
 
   const [values, setValues] = useState(initialStateValues);
   const [error, setError]=useState('');
-  const[esta,setEsta]=useState('')
+  const[esta,setEsta]=useState(false)
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-
+    //registrar();
+    console.log(esta);
   };
 
-  const registrar= () => {
-
+  const registrar = () => {
     
-    //const res=await auth.createUserWithEmailAndPassword(values.Email, values.Password)
     store.collection("registro").where("Email", "==", values.Email)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            setEsta(doc.id)
+            setEsta(true)
             //console.log(doc.id, " => ", doc.data());
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
-        //return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
-        //setEsta(true)
-        
-        //return false;
     });
 
 
@@ -63,79 +58,64 @@ const Registro = () => {
 
   const registrarUsuario =async()=>{
 
-    
-    console.log(esta);
-    const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
 
-    if(esta){
-      store.collection("registro").doc(res.user.uid).set(values);
-        toast("Te Registraste con Exito", {
-          type: "success",
-          
-        });
-        historial.push('/login')
-        setValues({ ...initialStateValues });
+
+
+    auth.createUserWithEmailAndPassword(values.Email, values.Password)
+  .then((userCredential) => {
+    // Signed in
+    if(auth.signOut()){
+      
+      toast("Te Registraste con Exito", {
+        type: "success",
+        autoClose: 1000 
+      });
+      historial.push('/login')
+      setTimeout(() => {
+        window.location.replace('');
+      }, 1000);
     }
+    //var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    //setValues({ ...initialStateValues });
+    return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+  });
+    /*const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+     console.log(esta);
+    if(esta==false){
+    
+        store.collection("registro").doc((await res).user.uid).set(values);
+        if(auth.signOut()){
+      
+          toast("Te Registraste con Exito", {
+            type: "success",
+            autoClose: 1000 
+          });
+          historial.push('/login')
+          setTimeout(() => {
+            window.location.replace('');
+          }, 1000);
+        }
+
+       
+    }else{
+      setValues({ ...initialStateValues });
+      return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
+      
+    }*/
     
   }
-
-/*
-
-   var user=auth.currentUser;
-   if(user != null){
-     user.providerData.forEach( function(profile){
-       console.log(profile.email);
-       if(profile.email===values.Email){
-        return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
-       }else{
-        const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
-        store.collection("registro").doc(res.user.uid).set(values);
-            toast("Te Registraste con Exito", {
-              type: "success",
-              
-            });
-            historial.push('/login')
-       }
-     })
-*/
-
-   
-
-        
-      
-   
-  
-    /*
-     const res= await  auth.createUserWithEmailAndPassword(values.Email, values.Password)
-     
-     store.collection("registro").doc(values.Email).get()
-
-      .then(function(snapshot) {
-          if(snapshot.exists){
-            return toast("El usuario ya existe", { type: "warning", autoClose: 1000 });
-          } else{
-            
-            store.collection("registro").doc(res.user.uid).set(values);
-            toast("Te Registraste con Exito", {
-              type: "success",
-              
-            });
-            historial.push('/login')
-
-          } // true
-          
-
-  });*/
- 
-
-
 
   const validNomAp = (str) => {
 
     let pattern = /^(?=.{3,30}$)[a-z]+(?:\s+[a-z]+)*$/i
 
     return !!pattern.test(str);
-  };
+  }
 
   const validEdad = (str) => {
 
@@ -153,18 +133,24 @@ const Registro = () => {
     let pattern = /^([4-8][0-9]|[0-1][0-5][0-0])$/;
     return !!pattern.test(str);
 
-  };
+  }
 
   const validEmail = (str) => {
     let pattern = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
 
 
     return !!pattern.test(str);
-  };
-  const validPass = (str) => {
-    let pattern = /^[A-Za-z0-9]{5,30}/
+  }
 
-    return !!pattern.test(str);
+  const validPass = (str) => {
+    if(str.length<6){
+        return false;
+    }else{
+      return true;
+    }
+    //let pattern = /^[A-Za-z0-9]{5,30}/
+
+    //return !!pattern.test(str);
   };
 
   const handleSubmit = (e) => {
@@ -194,20 +180,19 @@ const Registro = () => {
       if (!validPass(values.Password)) {
         return toast("Contrasena no Valida", { type: "warning", autoClose: 1000 });
       }
-        registrar();
+        
         registrarUsuario(values);
         //setValues({ ...initialStateValues });
     
   };
 
   useEffect(() => {
-    if (currentId === "") {
-      setValues({ ...initialStateValues });
-    } else {
-      //getLinkById(currentId);
-    }
 
-  }, [currentId]);
+
+      //registrar(values)
+
+    //
+  }, []);
 
 
 
@@ -338,12 +323,13 @@ const Registro = () => {
               onChange={handleInputChange}
               value={values.Password}
               name="Password"
-              title="ingrese de 5 a 30 caracteres alfanumericos"
+              title="ingrese de 5 a 30 caracteres"
+              maxLength='30'
               required
             />
 
           </div>
-
+          
           <input
             className='btn btn-info btn-block mt-4'
             value='Registrar Usuario'

@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/App.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 
-const CategoriaIntermedio = () => {
+
+
+
+const CategoriaIntermedio = (props) => {
+
+    const { history } = props;
+    
     return (
         <div>
             <div class="container BotonesNivel" >
@@ -39,8 +45,12 @@ const CategoriaIntermedio = () => {
                     <img src='./Categorias/HombroIntermedio.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div>
+
+                <div>
+                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Ir a Niveles</button>
+                </div>
             </div>
         </div>
     )
 }
-export default CategoriaIntermedio;
+export default withRouter(CategoriaIntermedio);

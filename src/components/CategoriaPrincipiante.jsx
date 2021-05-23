@@ -7,7 +7,8 @@ import Video from '../Video'
 const CategoriaPrincipiante = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalEspalda, setModalEspalda] = useState(false);
-    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/fitnes.mp4?alt=media&token=83e7c600-5031-48f4-9687-5444a8d00a5f';
+    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/pecho_HD_720p%5B1%5D.mp4?alt=media&token=721498a9-ef5c-4a2b-8f3b-e0d2906e3154';
+
     
     const { history } = props;
  
@@ -88,7 +89,7 @@ const CategoriaPrincipiante = (props) => {
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
                 <div>
-                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Atras</button>
+                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Ir a Niveles</button>
                 </div>
             </div>
         </div>
