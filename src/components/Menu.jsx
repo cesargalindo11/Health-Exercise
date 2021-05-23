@@ -16,7 +16,6 @@ const Menu = () => {
     auth.onAuthStateChanged((user) => {
 
       if (user) {
-        //window.location.replace('');
         setUsuario(user.email)
         
       }

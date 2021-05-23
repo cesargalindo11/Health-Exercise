@@ -111,7 +111,7 @@ class Video extends Component {
         <div class="container ">
           <div className="margin-top ">
             <div className="centrar">
-          <button onClick={() => this.load(this.props.link)} class="btn btn-info mt-4 tamano">Iniciar</button>
+          <button onClick={() => this.load(this.props.link)} class="btn btn-info mt-4 tamano posicion-bajar">Iniciar</button>
           <button onClick={() => this.load(this.props.link)} onClick={this.handlePlayPause}  class="btn btn-info  mt-4 tamano">{playing ? 'Pausa' : 'Reanudar'} </button>
           </div>
           </div>

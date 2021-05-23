@@ -27,7 +27,7 @@ const Login = () => {
         setEmail('')
         setPass('')
         setError(null)
-        // historial.push('/niveles')    
+        historial.push('/niveles')    
     } catch (error) {
         if(error.code === 'auth/user-not-found'){
           return toast(" Correo  Incrorrecto", { type: "warning", autoClose: 1000 });

@@ -52,11 +52,16 @@ const CategoriaPrincipiante = (props) => {
                     <div>
                     <h2>Categoria Pecho</h2>
                         <Video link={url} />
+                    
+                        <button onClick={() => setModalIsOpen(false)}  class="btn btn-info mt-4 tamano posicion">{<h2>Categoria</h2>}</button>
+                   
                     </div>
-                    <div>
-                        <button onClick={() => setModalIsOpen(false)}  class="btn btn-info mt-4 tamano">{<h2>Categoria</h2>}</button>
-                    </div>
+                  
                 </Modal>
+
+
+
+
 
                  <div class="card m-2">
                     <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
