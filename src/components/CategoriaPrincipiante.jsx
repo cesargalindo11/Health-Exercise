@@ -117,8 +117,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -144,7 +145,7 @@ const CategoriaPrincipiante = (props) => {
 
                 <div class="card m-2">
                     <img src='./Categorias/brazos.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
+                    <button onClick={() => setModalBrazo(true)}type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalBrazo}
@@ -155,8 +156,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -180,7 +182,7 @@ const CategoriaPrincipiante = (props) => {
 
                 <div class="card m-2">
                     <img src='./Categorias/piernas.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
+                    <button onClick={() => setModalPierna(true)}type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalPierna}
@@ -191,8 +193,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -216,7 +219,7 @@ const CategoriaPrincipiante = (props) => {
 
                 <div class="card m-2">
                     <img src='./Categorias/abdomen.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
+                    <button onClick={() => setModalAbdomen(true)}type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalAbdomen}
@@ -227,8 +230,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -252,7 +256,7 @@ const CategoriaPrincipiante = (props) => {
 
                 <div class="card m-2">
                     <img src='./Categorias/hombros.jpg' className='Ejercicios' />
-                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
+                    <button onClick={() => setModalHombro(true)}type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
                 <Modal
                     isOpen={modalHombro}
@@ -263,8 +267,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
