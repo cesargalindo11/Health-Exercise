@@ -79,8 +79,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                backgroundColor: '#292f36',
-                                backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                //backgroundColor: '#292f36',
+                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
+                                background: 'rgba(0, 0, 0, .01)',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
