@@ -83,12 +83,13 @@ const Registro = () => {
     }
     
   }
+
   const validNomAp = (str) => {
 
     let pattern = /^(?=.{3,30}$)[a-z]+(?:\s+[a-z]+)*$/i
 
     return !!pattern.test(str);
-  };
+  }
 
   const validEdad = (str) => {
 
@@ -106,21 +107,29 @@ const Registro = () => {
     let pattern = /^([4-8][0-9]|[0-1][0-5][0-0])$/;
     return !!pattern.test(str);
 
-  };
+  }
 
   const validEmail = (str) => {
     let pattern = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
 
 
     return !!pattern.test(str);
-  };
-  const validPass = (str) => {
-    let pattern = /^[A-Za-z0-9]{5,30}$/;
-    // let pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-    // let pattern = /^(?=[^AZ]*[AZ])(?=[^az]*[az])(?=[^0-9]*[0-9]).{6,30}$/; 
+  }
 
-    return !!pattern.test(str);
-  };
+  const validPass = (str) => {
+    // let pattern = /^[A-Za-z0-9]{5,30}$/;
+    // let pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{5,30}$/;
+    // let pattern = /^(?=[^AZ]*[AZ])(?=[^az]*[az])(?=[^0-9]*[0-9]).{5,30}$/; 
+    let letras = str.length 
+    if(letras > 4  && letras < 31 ){
+      return true;
+    }else{
+      return false;
+    }
+
+
+    // return !!pattern.test(str);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();

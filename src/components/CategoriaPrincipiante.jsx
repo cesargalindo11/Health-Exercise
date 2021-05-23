@@ -88,7 +88,7 @@ const CategoriaPrincipiante = (props) => {
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
                 <div>
-                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Atras</button>
+                    <button onClick={() => history.push('/niveles') } type="button" class="btn btn-info btn-block mt-4">Ir a Niveles</button>
                 </div>
             </div>
         </div>
