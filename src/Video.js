@@ -110,9 +110,15 @@ class Video extends Component {
         </div>
         <div class="container ">
           <div className="margin-top ">
-            <div className="centrar">
+          <div className="centrar">
+          <button onClick={()=>this.props.funcion()} class="btn btn-info mt-4 tamano posicion-bajar">Categoria</button>
           <button onClick={() => this.load(this.props.link)} class="btn btn-info mt-4 tamano posicion-bajar">Iniciar</button>
           <button onClick={() => this.load(this.props.link)} onClick={this.handlePlayPause}  class="btn btn-info  mt-4 tamano">{playing ? 'Pausa' : 'Reanudar'} </button>
+          {
+            this.props.esUltimo? <button onClick={()=>this.props.funcion3()} class="btn btn-info mt-4 tamano posicion-bajar">Ir a Niveles</button>
+            :<button onClick={()=>this.props.funcion2()} class="btn btn-info mt-4 tamano posicion-bajar">Siguiente Ejercicio</button>
+
+          }
           </div>
           </div>
         </div>

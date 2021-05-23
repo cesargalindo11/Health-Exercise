@@ -100,6 +100,12 @@ h1{
 h2{
     font-size: 24px;
     text-align: center;
+    
+}
+h3{
+    margin-right: 250px;
+    font-size: 24px;
+    color: #FF6B6B;
 }
 .posicion{
     margin-bottom: 200px;

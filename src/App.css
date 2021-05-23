@@ -7,7 +7,7 @@
 }
 
 .player-wrapper {
-  width: 500px;
+  width: 534px;
   height: 300px;
   background-color:#FDCB6E;
 }
@@ -26,7 +26,7 @@
 }
 .centrar{
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
 }
 .video{
   margin-top: 50px;
