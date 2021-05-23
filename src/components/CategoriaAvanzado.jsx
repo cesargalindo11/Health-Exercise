@@ -15,29 +15,29 @@ const CategoriaAvanzado = (props) => {
                     Categoria Avanzado
                 </h2>
             </div>
-            <div class="container" style={{ display: "flex", flexWrap: "wrap" }}>
+            <div class="container backgroud-card" style={{ display: "flex", flexWrap: "wrap" }}>
                 <div class="card m-2">
-                    <img src='./Categorias/PechoAvanzado.jpg' className='Ejercicios' />
+                    <img src='./Categorias/pecho.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pecho</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/EspaldaAvanzado.jpeg' className='Ejercicios' />
+                    <img src='./Categorias/espalda.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Espalda</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/BrazoAvanzado.jpg' className='Ejercicios' />
+                    <img src='./Categorias/brazos.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/PiernaAvanzado.jpg' className='Ejercicios' />
+                    <img src='./Categorias/piernas.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/AbdominalAvanzado.jpg' className='Ejercicios' />
+                    <img src='./Categorias/abdomen.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/HombroAvanzado.jpg' className='Ejercicios' />
+                    <img src='./Categorias/hombros.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div>
                 <div>

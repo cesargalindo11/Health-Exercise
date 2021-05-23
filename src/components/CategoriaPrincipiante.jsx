@@ -66,8 +66,8 @@ const CategoriaPrincipiante = (props) => {
 
 
                 <div class="card m-2">
-                    <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={()=> setModalIsPecho(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
+                    <img src='./Categorias/pecho.jpg' className='Ejercicios' />
+                    <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
                 </div>
               
                 <Modal
@@ -104,7 +104,7 @@ const CategoriaPrincipiante = (props) => {
 
 
                  <div class="card m-2">
-                    <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
+                    <img src='./Categorias/espalda.jpg' className='Ejercicios' />
                     <button onClick={() => setModalEspalda(true)} type="button" class="btn btn-info btn-block mt-4">{<h2>Espalda</h2>}</button>
                 </div>
                 <Modal
@@ -142,8 +142,8 @@ const CategoriaPrincipiante = (props) => {
 
 
                 <div class="card m-2">
-                    <img src='./Categorias/BrazoPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={() => setModalBrazo(true)} type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
+                    <img src='./Categorias/brazos.jpg' className='Ejercicios' />
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalBrazo}
@@ -178,8 +178,8 @@ const CategoriaPrincipiante = (props) => {
 
 
                 <div class="card m-2">
-                    <img src='./Categorias/PiernaPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={() => setModalPierna(true)}  type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
+                    <img src='./Categorias/piernas.jpg' className='Ejercicios' />
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalPierna}
@@ -214,8 +214,8 @@ const CategoriaPrincipiante = (props) => {
 
 
                 <div class="card m-2">
-                    <img src='./Categorias/AbdominalPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={() => setModalAbdomen(true)}  type="button" class="btn btn-info btn-block mt-4">{<h2>Abdomen</h2>}</button>
+                    <img src='./Categorias/abdomen.jpg' className='Ejercicios' />
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
                 </div>
                 <Modal
                     isOpen={modalAbdomen}
@@ -250,8 +250,8 @@ const CategoriaPrincipiante = (props) => {
 
 
                 <div class="card m-2">
-                    <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
-                    <button onClick={() => setModalHombro(true)}  type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
+                    <img src='./Categorias/hombros.jpg' className='Ejercicios' />
+                    <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
                 <Modal
                     isOpen={modalHombro}

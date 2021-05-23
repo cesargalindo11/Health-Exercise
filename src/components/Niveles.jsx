@@ -36,15 +36,15 @@ const Niveles = (props) => {
         
           <div className='Niveles'>
             <div class="container">
-              <img src='./NivelesImagenes/CuerpoPrincipiante.jpg' className='CuerpoPrincipiante' />
+              <img src='./NivelesImagenes/uno.jpg' className='CuerpoPrincipiante' />
               <button onClick={() => history.push('/categoriaprincipiante')} type="button" class="btn btn-info btn-block mt-4">Nivel Principiante</button>
             </div>
             <div class="container">
-              <img src='./NivelesImagenes/CuerpoIntermedio.jpg' className='CuerpoPrincipiante'></img>
+              <img src='./NivelesImagenes/dos.jpg' className='CuerpoPrincipiante'></img>
               <button onClick={() => history.push('/categoriaintermedio')} type="button" class="btn btn-info btn-block mt-4">Nivel Intermedio</button>
             </div>
             <div class="container">
-              <img src='./NivelesImagenes/CuerpoAvanzado.jpg' className='CuerpoPrincipiante'></img>
+              <img src='./NivelesImagenes/tres.jpg' className='CuerpoPrincipiante'></img>
               <button onClick={() => history.push('/categoriaavanzado')} type="button" class="btn btn-info btn-block mt-4">Nivel Avanzado</button>
             </div>
           </div>
