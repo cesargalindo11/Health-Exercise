@@ -24,7 +24,7 @@ const CategoriaPrincipiante = (props) => {
             </div>
             <div class="container backgroud-card" style={{ display: "flex", flexWrap: "wrap" }} >
                 <div class="card m-2">
-                    <img src='./Categorias/PechoPrincipiante.jpg' className='Ejercicios' />
+                    <img src='./Categorias/pecho.jpg' className='Ejercicios' />
                     <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
                 </div>
               
@@ -64,7 +64,7 @@ const CategoriaPrincipiante = (props) => {
 
 
                  <div class="card m-2">
-                    <img src='./Categorias/EspaldaPrincipiante.png' className='Ejercicios' />
+                    <img src='./Categorias/espalda.jpg' className='Ejercicios' />
                     <button onClick={() => setModalEspalda(true)} type="button" class="btn btn-info btn-block mt-4">{<h2>Espalda</h2>}</button>
                 </div>
                 <Modal isOpen={modalEspalda}>
@@ -78,19 +78,19 @@ const CategoriaPrincipiante = (props) => {
                 </Modal> 
 
                 <div class="card m-2">
-                    <img src='./Categorias/BrazoPrincipiante.jpg' className='Ejercicios' />
+                    <img src='./Categorias/brazos.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Brazo</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/PiernaPrincipiante.jpg' className='Ejercicios' />
+                    <img src='./Categorias/piernas.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Pierna</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/AbdominalPrincipiante.jpg' className='Ejercicios' />
+                    <img src='./Categorias/abdomen.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Abdominal</h2>}</button>
                 </div>
                 <div class="card m-2">
-                    <img src='./Categorias/HombroPrincipiante.jpg' className='Ejercicios' />
+                    <img src='./Categorias/hombros.jpg' className='Ejercicios' />
                     <button type="button" class="btn btn-info btn-block mt-4">{<h2>Hombro</h2>}</button>
                 </div> 
                 <div>
