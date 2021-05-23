@@ -67,7 +67,7 @@ const CategoriaPrincipiante = (props) => {
 
                 <div class="card m-2">
                     <img src='./Categorias/pecho.jpg' className='Ejercicios' />
-                    <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
+                    <button onClick={()=> setModalIsPecho(true)} type="button" class="btn btn-info btn-block mt-4 tamanioletra">{<h2>Pecho</h2>}</button>
                 </div>
               
                 <Modal
