@@ -143,7 +143,7 @@ const Registro = () => {
   }
 
   const validPass = (str) => {
-    if(str.length<6){
+    if(str.length<5){
         return false;
     }else{
       return true;
