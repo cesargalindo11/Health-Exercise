@@ -93,7 +93,7 @@ const Login = () => {
           <form onSubmit={LoginUsuario} className='form-group'>
 
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <div className='input-group-prepend'>
                 <span className="input-group-text"> Correo</span>
               </div>
@@ -108,7 +108,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <div className='input-group-prepend'>
                 <span className="input-group-text">Contraseña</span>
               </div>
@@ -125,9 +125,12 @@ const Login = () => {
 
             <button
               onClick={LoginUsuario}
-              className="btn btn-info btn-block mt-4">
+              className="btn btn-info btn-block mt-2">
               Iniciar Sesion
             </button>
+            <a href = './RecuperarContraseña' className = 'recuperar1'>
+              ¿Olvidaste tu contraseña?
+            </a>
 
             {/* <Link to='/niveles'
               onClick={LoginUsuario}

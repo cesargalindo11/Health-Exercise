@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Niveles from "./components/Niveles"
 import Inicio from './components/Inicio'
 import Menu from './components/Menu'
+import RecuperarContraseña from './components/RecuperarContraseña'
 import './assets/css/App.css'
 import './firebaseConfig'
 import{ToastContainer} from 'react-toastify'
@@ -44,14 +45,12 @@ function App() {
             <RutaPrivada exact path='/categoriaprincipiante' component={CategoriaPrincipiante}></RutaPrivada>
             <RutaPrivada exact path='/categoriaintermedio' component={CategoriaIntermedio}></RutaPrivada>
             <RutaPrivada exact path='/categoriaavanzado' component={CategoriaAvanzado}></RutaPrivada>
-            
+            <Route exact path='/RecuperarContraseña' component = {RecuperarContraseña}></Route>
           </Switch>
 
         </Router>
 
       { <ToastContainer /> }
- 
-
       </div>
   );
 }
