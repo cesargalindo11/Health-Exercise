@@ -61,7 +61,7 @@ const Registro = () => {
 
 
 
-    auth.createUserWithEmailAndPassword(values.Email, values.Password)
+  auth.createUserWithEmailAndPassword(values.Email, values.Password)
   .then((userCredential) => {
     // Signed in
     if(auth.signOut()){

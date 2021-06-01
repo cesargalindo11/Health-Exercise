@@ -12,7 +12,7 @@ const CategoriaPrincipiante = (props) => {
     const [modalPierna, setModalPierna] = useState(false);
     const [modalAbdomen, setModalAbdomen] = useState(false);
     const [modalHombro, setModalHombro] = useState(false);
-    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/pecho_HD_720p%5B1%5D.mp4?alt=media&token=721498a9-ef5c-4a2b-8f3b-e0d2906e3154';
+    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/brazoscorregido_SD%20360p.mp4?alt=media&token=ca8c0150-4479-4777-862d-1ce33c06b74d';
 
     
     const { history } = props;
@@ -94,7 +94,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pecho</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/pechocorregido_SD%20360p.mp4?alt=media&token=ec0a660f-7771-4815-bb2f-85ed665a4665'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
                     
                    
                     </div>
