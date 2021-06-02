@@ -8,7 +8,6 @@ import {auth} from '../firebaseConfig'
 
  
     const historial = useHistory()
-    const [usuario, setUsuario] = useState(null)
     const [registro, setRegistro] = useState(null)
 
     useEffect(() => {
@@ -18,12 +17,13 @@ import {auth} from '../firebaseConfig'
   
         if (user) {
 
-          setUsuario(user.email)
-          //console.log(user.email);
+          setRegistro(user.email)
+          let ruta=window.location
+          if(ruta=='http://localhost:3000/login'){
+            historial.push('/niveles')
+          }
           
 
-        }else{
-          historial.push('/login')
         }
        
   
@@ -35,7 +35,7 @@ import {auth} from '../firebaseConfig'
       
       <Route {...rest}>
         {
-         usuario 
+         !registro 
         ? <Component/> 
         : ''
         }

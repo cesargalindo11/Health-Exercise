@@ -25,6 +25,7 @@ import CategoriaPrincipiante from "./components/CategoriaPrincipiante"
 import CategoriaIntermedio from "./components/CategoriaIntermedio"
 import CategoriaAvanzado from "./components/CategoriaAvanzado"
 import RutaPrivada  from './components/RutaPrivada.jsx';
+import RutaP2  from './components/RutaP2.jsx';
 
 function App() {
 
@@ -40,7 +41,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Inicio}></Route>
             <Route exact path='/registro' component={Registro}></Route>
-            <Route exact path='/login' component={Login}></Route>
+            <RutaP2 exact path='/login' component={Login}></RutaP2>
             <RutaPrivada exact path='/niveles' component={Niveles}></RutaPrivada>
             <RutaPrivada exact path='/categoriaprincipiante' component={CategoriaPrincipiante}></RutaPrivada>
             <RutaPrivada exact path='/categoriaintermedio' component={CategoriaIntermedio}></RutaPrivada>
