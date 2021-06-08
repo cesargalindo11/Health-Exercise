@@ -19,7 +19,7 @@ import {auth} from '../firebaseConfig'
 
           setRegistro(user.email)
           let ruta=window.location
-          if(ruta=='http://localhost:3000/login'){
+          if(ruta=='https://health-exersice.herokuapp.com/login'){
             historial.push('/niveles')
           }
           
