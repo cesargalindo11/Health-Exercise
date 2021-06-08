@@ -94,7 +94,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pecho</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/pechocorregido_SD%20360p.mp4?alt=media&token=ec0a660f-7771-4815-bb2f-85ed665a4665'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_pecho.mp4?alt=media&token=e9edabbc-9656-41cc-b5f9-ac7ddc4f58c2'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
                     
                    
                     </div>
@@ -171,7 +171,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Brazo</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_brazos.mp4?alt=media&token=7cdae677-1265-4b26-98b1-a1fc37951e24'} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
                     
                    
                     </div>
