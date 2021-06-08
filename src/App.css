@@ -7,8 +7,8 @@
 }
 
 .player-wrapper {
-  width: 500px;
-  height: 300px;
+  width: 710px;
+  height: 400px;
   background-color:#FDCB6E;
 }
 
@@ -26,7 +26,7 @@
 }
 .centrar{
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
 }
 .video{
   margin-top: 50px;
@@ -39,4 +39,9 @@
   font-size: 30px;
   border-radius: 10px;
   
+}
+h2{
+    font-size: 24px;
+    text-align: center;
+    
 }

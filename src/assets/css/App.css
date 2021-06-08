@@ -12,7 +12,14 @@ img {
 }
 .bg-t{
     
-    height: 200px;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top:15px;
+    border-radius: 10px;
+}
+.bg-t1{
+    
+    height: 110px;
     background: rgba(0, 0, 0, 0.5);
     padding-top:15px;
     border-radius: 10px;
@@ -100,10 +107,34 @@ h1{
 h2{
     font-size: 24px;
     text-align: center;
+    
 }
+h3{
+    margin-right: 250px;
+    font-size: 24px;
+    color: #FF6B6B;
+}
+
 .posicion{
     margin-bottom: 200px;
 }
 .posicion-bajar{
     margin-top: 500px;
+}
+.recuperar{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+.recuperar1{
+    margin-left: 200px;
+    color: bisque;
+    text-align: center;
+    text-decoration: none;
+}
+.colRecuperar {
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top:15px;
+    border-radius: 10px;
 }
