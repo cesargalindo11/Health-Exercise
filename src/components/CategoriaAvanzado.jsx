@@ -171,7 +171,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Brazo</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_brazos.mp4?alt=media&token=8cb93c51-234b-4cf8-9a09-ba8836b5a1c4'} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
                     
                    
                     </div>
