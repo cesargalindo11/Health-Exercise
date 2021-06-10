@@ -245,7 +245,7 @@ const CategoriaIntermedio = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Abdomen</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/intermedio_abdomen.mp4?alt=media&token=811f2f59-1819-4e86-adc1-9e34ac752b9e'} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
                     
                    
                     </div>
