@@ -4,7 +4,7 @@ import { Link, useHistory, withRouter } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 import Modal from 'react-modal'
 import Video from '../Video'
-const CategoriaAvanzado = (props) => {
+const CategoriaPrincipiante = (props) => {
     const historial=useHistory();
     const [modalIsPecho, setModalIsPecho] = useState(false);
     const [modalEspalda, setModalEspalda] = useState(false);
@@ -12,7 +12,7 @@ const CategoriaAvanzado = (props) => {
     const [modalPierna, setModalPierna] = useState(false);
     const [modalAbdomen, setModalAbdomen] = useState(false);
     const [modalHombro, setModalHombro] = useState(false);
-    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/pecho_HD_720p%5B1%5D.mp4?alt=media&token=721498a9-ef5c-4a2b-8f3b-e0d2906e3154';
+    const url='https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/brazoscorregido_SD%20360p.mp4?alt=media&token=ca8c0150-4479-4777-862d-1ce33c06b74d';
 
     
     const { history } = props;
@@ -94,7 +94,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pecho</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_pecho.mp4?alt=media&token=e9edabbc-9656-41cc-b5f9-ac7ddc4f58c2'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
                     
                    
                     </div>
@@ -132,7 +132,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Espalda</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaBrazo}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_espalda.mp4?alt=media&token=1d35c261-371b-4448-a200-8b472748bdce'} funcion={establecerModal} funcion2={siguienteCategoriaBrazo}/>
                     
                    
                     </div>
@@ -171,7 +171,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Brazo</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_brazos.mp4?alt=media&token=7cdae677-1265-4b26-98b1-a1fc37951e24'} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
                     
                    
                     </div>
@@ -208,7 +208,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pierna</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaAbdomen}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_piernas.mp4?alt=media&token=abed8a31-c6a7-479c-b3dc-06c559fe1b30'} funcion={establecerModal} funcion2={siguienteCategoriaAbdomen}/>
                     
                    
                     </div>
@@ -245,7 +245,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Abdomen</h3>
-                        <Video link={url} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_abdomen.mp4?alt=media&token=44870db4-adc8-4255-9c55-b913de024806'} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
                     
                    
                     </div>
@@ -282,7 +282,7 @@ const CategoriaAvanzado = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Hombro</h3>
-                        <Video link={url} funcion={establecerModal} funcion3={mandarANiveles}esUltimo={true} />
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/Proyecto_hombros.mp4?alt=media&token=96f672e1-af9d-42d9-8901-8935bef7d6f6'} funcion={establecerModal} funcion3={mandarANiveles}esUltimo={true} />
                     
                    
                     </div>
@@ -297,4 +297,4 @@ const CategoriaAvanzado = (props) => {
         </div>
     )
 }
-export default withRouter(CategoriaAvanzado);
+export default withRouter(CategoriaPrincipiante);

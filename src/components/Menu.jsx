@@ -3,26 +3,15 @@ import { Link, useHistory } from 'react-router-dom'
 import './Login'
 import { auth, store } from '../firebaseConfig';
 import '../assets/css/App.css';
+ 
 
 const Menu = () => {
 
 
   const historial = useHistory()
   const [usuario, setUsuario] = useState(null)
+  const [nombre, setNombre] = useState(null)
 
-  useEffect(() => {
-
-
-    auth.onAuthStateChanged((user) => {
-
-      if (user) {
-        setUsuario(user.email)
-        
-      }
-
-    })
-
-  }, [])
 
   const CerrarSesion = () => {
 
@@ -31,7 +20,43 @@ const Menu = () => {
     historial.push('/login')
 
   }
+  useEffect(() => {
 
+  
+    auth.onAuthStateChanged((user) => {
+
+      if (user) {
+
+        setUsuario(user.email)
+        
+  
+            store.collection("registro").where("Email", "==", usuario)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+  
+                    console.log(doc.data());
+                    setNombre(doc.Nombres)
+                    //console.log(doc.id, " => ", doc.data());
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+  
+          
+        
+        //console.log(user.email);
+        
+
+      }else{
+        historial.push('/login')
+      }
+     
+
+    })
+
+  }, [historial])
 
   return (
     <div>
@@ -43,7 +68,10 @@ const Menu = () => {
         <ul className='barra '>
 
           <div className="logo">
-            <a href="/#"><img src="logo.png" alt="logo" /> </a>
+            {
+              usuario ? <a href="/niveles"><img src="logo.png" alt="logo" /> </a>:<a href="/"><img src="logo.png" alt="logo" /> </a>
+            }
+            
           </div>
           <div className="botones nav">
 
@@ -63,6 +91,7 @@ const Menu = () => {
               }
             </li>
             <li className='nav-item' >
+
 
               {
                 usuario

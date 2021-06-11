@@ -33,7 +33,7 @@ const Registro = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    //registrar();
+    registrar();
     console.log(esta);
   };
 
@@ -60,7 +60,7 @@ const Registro = () => {
 
 
 
-
+/*
   auth.createUserWithEmailAndPassword(values.Email, values.Password)
   .then((userCredential) => {
     // Signed in
@@ -84,7 +84,9 @@ const Registro = () => {
     //var errorCode = error.code;
     //var errorMessage = error.message;
   });
-    /*const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
+    */
+
+    const res= auth.createUserWithEmailAndPassword(values.Email, values.Password)
      console.log(esta);
     if(esta==false){
     
@@ -103,10 +105,10 @@ const Registro = () => {
 
        
     }else{
-      setValues({ ...initialStateValues });
+      //setValues({ ...initialStateValues });
       return toast("Este Correo ya existe", { type: "warning", autoClose: 1000 });
       
-    }*/
+    }
     
   }
 
