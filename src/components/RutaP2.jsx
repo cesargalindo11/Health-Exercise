@@ -8,7 +8,7 @@ import {auth} from '../firebaseConfig'
 
  
     const historial = useHistory()
-    const [registro, setRegistro] = useState(null)
+    const [registro, setRegistro] = useState()
 
     useEffect(() => {
 
@@ -24,6 +24,10 @@ import {auth} from '../firebaseConfig'
           }
           
 
+        }else{
+          if(window.location=='http://localhost:3000/recuperarcontraseña'){
+            historial.push('/recuperarcontraseña')
+          }
         }
        
   

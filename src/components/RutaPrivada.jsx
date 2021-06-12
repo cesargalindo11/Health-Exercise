@@ -23,6 +23,7 @@ import {auth} from '../firebaseConfig'
           
 
         }else{
+        
           historial.push('/login')
         }
        

@@ -42,11 +42,12 @@ function App() {
             <Route exact path='/' component={Inicio}></Route>
             <Route exact path='/registro' component={Registro}></Route>
             <RutaP2 exact path='/login' component={Login}></RutaP2>
+            <RutaP2 exact path='/recuperarcontraseña' component={RecuperarContraseña}></RutaP2>
             <RutaPrivada exact path='/niveles' component={Niveles}></RutaPrivada>
             <RutaPrivada exact path='/categoriaprincipiante' component={CategoriaPrincipiante}></RutaPrivada>
             <RutaPrivada exact path='/categoriaintermedio' component={CategoriaIntermedio}></RutaPrivada>
             <RutaPrivada exact path='/categoriaavanzado' component={CategoriaAvanzado}></RutaPrivada>
-            <Route exact path='/RecuperarContraseña' component = {RecuperarContraseña}></Route>
+            
           </Switch>
 
         </Router>

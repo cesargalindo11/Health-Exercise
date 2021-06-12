@@ -128,9 +128,8 @@ const Login = () => {
               className="btn btn-info btn-block mt-2">
               Iniciar Sesion
             </button>
-            <a href = './RecuperarContraseña' className = 'recuperar1'>
-              ¿Olvidaste tu contraseña?
-            </a>
+            <Link className = 'recuperar1' to='/recuperarcontraseña'>¿Olvidaste tu contraseña?</Link>
+           
 
             {/* <Link to='/niveles'
               onClick={LoginUsuario}
