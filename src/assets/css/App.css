@@ -2,6 +2,8 @@ body{
     background-image: url(../img/man-2264825_1920.jpg);
     background-size: 100%;
     max-width: 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 img {
@@ -35,7 +37,7 @@ img {
     margin-right: 60px;
 }
 .barra-content{
-    width: 90%;
+    max-width: 100%;
 }
 .barra{
     display: flex;
