@@ -94,7 +94,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pecho</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_pecho.mp4?alt=media&token=2924fe63-865e-4909-ab56-29d850ee31cf'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_pecho.mp4?alt=media&token=976b443b-26fd-4f3f-865f-ffd59e31c431'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
                     
                    
                     </div>
@@ -132,7 +132,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Espalda</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_espalda.mp4?alt=media&token=03a0c46e-c118-41cc-bd34-91574f178353'} funcion={establecerModal} funcion2={siguienteCategoriaBrazo}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_espalda.mp4?alt=media&token=fc1386b5-e5ab-460a-9d72-6b7d33bd7a8f'} funcion={establecerModal} funcion2={siguienteCategoriaBrazo}/>
                     
                    
                     </div>
@@ -171,7 +171,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Brazo</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_brazos.mp4?alt=media&token=8cb93c51-234b-4cf8-9a09-ba8836b5a1c4'} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_brazos.mp4?alt=media&token=50c83c38-b3ad-436e-993c-aaa5815eac8f'} funcion={establecerModal} funcion2={siguienteCategoriaPierna}/>
                     
                    
                     </div>
@@ -208,7 +208,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pierna</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_piernas.mp4?alt=media&token=7a83ed6f-20e5-4a6f-85ad-5edbad9601e1'} funcion={establecerModal} funcion2={siguienteCategoriaAbdomen}/>
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_piernas.mp4?alt=media&token=f327ace5-b70e-43d6-aa41-ab2249d8e646'} funcion={establecerModal} funcion2={siguienteCategoriaAbdomen}/>
                     
                    
                     </div>
@@ -245,7 +245,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Abdomen</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_abdomen.mp4?alt=media&token=3c243a4e-5a79-4ef3-8219-257a5f7efb9c'} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_abdomen.mp4?alt=media&token=e8113ed7-ba87-47b3-a806-f5315af92fc1'} funcion={establecerModal} funcion2={siguienteCategoriaHombro} />
                     
                    
                     </div>
@@ -282,7 +282,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Hombro</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_hombros.mp4?alt=media&token=2e2eb2f7-3b97-420d-ba60-871c4bb20e94'} funcion={establecerModal} funcion3={mandarANiveles}esUltimo={true} />
+                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/avanzado_hombros.mp4?alt=media&token=cadf52d7-6b4b-443a-917f-99f63105415f'} funcion={establecerModal} funcion3={mandarANiveles}esUltimo={true} />
                     
                    
                     </div>
