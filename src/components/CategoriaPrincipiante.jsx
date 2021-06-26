@@ -94,7 +94,7 @@ const CategoriaPrincipiante = (props) => {
                         
                     <div className="container">
                     <h3>Categoria Pecho</h3>
-                        <Video link={'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/principiante_pecho.mp4?alt=media&token=d892c276-baeb-4fa4-9978-523603a103bd'} funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
+                        <Video link={ 'https://firebasestorage.googleapis.com/v0/b/saludyejercicio-8966d.appspot.com/o/principiante_piernas.mp4?alt=media&token=f8f5ebb3-0827-49c7-b7df-c5c4f5a74d28' } funcion={establecerModal} funcion2={siguienteCategoriaEspalda}/>
                     
                    
                     </div>
