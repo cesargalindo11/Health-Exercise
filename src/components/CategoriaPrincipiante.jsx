@@ -79,9 +79,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -114,12 +114,13 @@ const CategoriaPrincipiante = (props) => {
                     style={
                         {
                             overlay: {
-                                backgroundColor: '#292F36'
+                                //backgroundImage: 'url(../img/yoga-3053487_1920.jpg)'
+                               backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -156,9 +157,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -193,9 +194,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -230,9 +231,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
@@ -267,9 +268,9 @@ const CategoriaPrincipiante = (props) => {
                                 backgroundColor: '#292F36'
                             },
                             content: {
-                                //backgroundColor: '#292f36',
-                                //backgroundImage: 'linear-gradient(160deg, #292f36 0%, #44eecc 100%)',
-                                background: 'rgba(0, 0, 0, .01)',
+                                backgroundImage: 'url(./Categorias/man-2264825_1920.jpg)',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
                                 position: 'absolute',
                                 top: '20px',
                                 left: '20px',
