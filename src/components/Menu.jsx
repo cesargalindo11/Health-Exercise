@@ -20,6 +20,23 @@ const Menu = () => {
     historial.push('/login')
 
   }
+const nombreUsuario=async(correo)=>{
+  
+  store.collection("registro").where("Email", "==", correo)
+  .get()
+  .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+
+          console.log(doc.data());
+          setNombre( doc.data().Nombres)
+          //console.log(doc.id, " => ", doc.data());
+      });
+  })
+  .catch((error) => {
+      console.log("Error getting documents: ", error);
+  });
+}
+console.log(nombre);
   useEffect(() => {
 
   
@@ -28,27 +45,9 @@ const Menu = () => {
       if (user) {
 
         setUsuario(user.email)
+        nombreUsuario(user.email);
+        console.log(user.email);
         
-  
-            store.collection("registro").where("Email", "==", usuario)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-  
-                    console.log(doc.data());
-                    setNombre(doc.Nombres)
-                    //console.log(doc.id, " => ", doc.data());
-                });
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
-  
-          
-        
-        //console.log(user.email);
-        
-
       }else{
         historial.push('/login')
       }
@@ -73,8 +72,9 @@ const Menu = () => {
             }
             
           </div>
+          
           <div className="botones nav">
-
+          
             <li className='nav-item'>
               {
                 !usuario
@@ -90,12 +90,23 @@ const Menu = () => {
                   : (<span></span>)
               }
             </li>
-            <li className='nav-item' >
-
-
+           
               {
                 usuario
-                  ? (<button
+                  ? <h3 className='nav-link' >{nombre}</h3>
+                  : (<span></span>)
+              }
+            
+           
+            <li className='nav-item' >
+              
+           
+              {
+                usuario
+                  ?
+                  (
+                  <button
+                  
                     onClick={CerrarSesion}
                     className='barra btn btn-danger '>
                     Cerrar sesion

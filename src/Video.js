@@ -97,7 +97,9 @@ class App extends Component {
         </section>
         <section className='col'>
            <div className="tiempo">
-           <h1 style={{fontSize: '100px'}}><Duration seconds={duration * (1 - played)} /></h1>
+             <h1 style={{fontSize: '100px'}}><Duration seconds={duration * (1 - played)} /></h1>
+             
+           
            </div>
                 
  

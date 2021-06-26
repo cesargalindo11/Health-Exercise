@@ -16,7 +16,7 @@ function format (seconds) {
   if (hh) {
     return `${hh}:${pad(mm)}:${ss}`
   }
-  return `${mm}:${ss}`
+  return `${'0'+mm}:${ss}`
 }
 
 function pad (string) {
